@@ -77,7 +77,7 @@ export default function AIAssistant() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 bg-yellow-500 hover:bg-yellow-600 text-gray-900 rounded-full p-4 shadow-lg transform transition hover:scale-110 active:scale-95"
+        className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-40 bg-yellow-500 hover:bg-yellow-600 text-gray-900 rounded-full p-3 md:p-4 shadow-lg transform transition hover:scale-110 active:scale-95"
       >
         <MessageCircle size={24} className="font-bold" />
       </button>
@@ -85,36 +85,36 @@ export default function AIAssistant() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 w-full max-w-md">
-      <div className="bg-[#0f1b2e] rounded-2xl shadow-2xl border border-yellow-500/20 flex flex-col h-[600px]">
+    <div className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-40 w-[calc(100%-2rem)] md:w-full max-w-md">
+      <div className="bg-[#0f1b2e] rounded-2xl shadow-2xl border border-yellow-500/20 flex flex-col h-[500px] md:h-[600px]">
         {/* Header */}
-        <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 p-4 rounded-t-2xl flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-yellow-600 rounded-full flex items-center justify-center font-bold text-lg">
+        <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 p-3 md:p-4 rounded-t-2xl flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 md:gap-3 flex-1 min-w-0">
+            <div className="w-8 md:w-10 h-8 md:h-10 bg-yellow-600 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
               🎯
             </div>
-            <div>
-              <h3 className="font-bold">Chanakya AI Concierge</h3>
-              <p className="text-sm text-yellow-900">Online | Gurukulam Advisor</p>
+            <div className="min-w-0">
+              <h3 className="font-bold text-sm md:text-base truncate">Chanakya AI Concierge</h3>
+              <p className="text-xs text-yellow-900">Online | Advisor</p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-gray-900 hover:text-gray-800"
+            className="text-gray-900 hover:text-gray-800 flex-shrink-0"
           >
             <X size={20} />
           </button>
         </div>
 
         {/* Messages Area */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4">
           {messages.map(message => (
             <div
               key={message.id}
               className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-xs px-4 py-3 rounded-lg ${
+                className={`max-w-xs px-3 md:px-4 py-2 md:py-3 rounded-lg text-sm md:text-base ${
                   message.type === 'user'
                     ? 'bg-yellow-500 text-gray-900 rounded-br-none font-semibold'
                     : 'bg-slate-800 text-slate-100 rounded-bl-none border border-slate-700'
@@ -126,7 +126,7 @@ export default function AIAssistant() {
           ))}
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-slate-800 px-4 py-3 rounded-lg border border-slate-700 flex gap-2">
+              <div className="bg-slate-800 px-3 md:px-4 py-2 md:py-3 rounded-lg border border-slate-700 flex gap-2">
                 <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div>
                 <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                 <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
@@ -137,14 +137,14 @@ export default function AIAssistant() {
 
         {/* Quick Questions */}
         {messages.length === 1 && !isLoading && (
-          <div className="px-4 py-3 border-t border-slate-700 max-h-48 overflow-y-auto">
-            <p className="text-xs text-slate-400 mb-3 font-semibold">Popular Questions:</p>
-            <div className="space-y-2">
+          <div className="px-3 md:px-4 py-3 border-t border-slate-700 max-h-32 md:max-h-48 overflow-y-auto">
+            <p className="text-xs text-slate-400 mb-2 md:mb-3 font-semibold">Popular Questions:</p>
+            <div className="space-y-1 md:space-y-2">
               {commonQuestions.map((question, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleQuickQuestion(question)}
-                  className="w-full text-left p-2 rounded bg-slate-900/50 hover:bg-slate-800 border border-slate-700 hover:border-yellow-500/50 text-xs text-slate-300 hover:text-yellow-400 transition"
+                  className="w-full text-left p-2 rounded bg-slate-900/50 hover:bg-slate-800 border border-slate-700 hover:border-yellow-500/50 text-xs text-slate-300 hover:text-yellow-400 transition line-clamp-2"
                 >
                   {question}
                 </button>
@@ -154,7 +154,7 @@ export default function AIAssistant() {
         )}
 
         {/* Input Area */}
-        <div className="border-t border-slate-700 p-4">
+        <div className="border-t border-slate-700 p-3 md:p-4">
           <div className="flex gap-2">
             <input
               type="text"
@@ -166,16 +166,16 @@ export default function AIAssistant() {
                   handleSendMessage(inputValue);
                 }
               }}
-              placeholder="Ask Chanakya AI anything..."
-              className="flex-1 px-3 py-2 rounded-lg bg-slate-900/50 border border-slate-700 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition"
+              placeholder="Ask Chanakya..."
+              className="flex-1 px-2 md:px-3 py-2 rounded-lg bg-slate-900/50 border border-slate-700 text-white text-xs md:text-sm placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition"
               disabled={isLoading}
             />
             <button
               onClick={() => handleSendMessage(inputValue)}
               disabled={isLoading || !inputValue.trim()}
-              className="bg-yellow-500 hover:bg-yellow-600 disabled:bg-slate-700 disabled:cursor-not-allowed text-gray-900 p-2 rounded-lg transition"
+              className="bg-yellow-500 hover:bg-yellow-600 disabled:bg-slate-700 disabled:cursor-not-allowed text-gray-900 p-2 rounded-lg transition flex-shrink-0"
             >
-              <Send size={18} />
+              <Send size={16} className="md:w-5 md:h-5" />
             </button>
           </div>
         </div>

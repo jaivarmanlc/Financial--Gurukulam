@@ -43,12 +43,12 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-[#0f1b2e] rounded-2xl p-8 w-full max-w-2xl mx-4 relative border border-yellow-500/20">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 md:p-0 overflow-y-auto">
+      <div className="bg-[#0f1b2e] rounded-2xl w-full max-w-2xl relative border border-yellow-500/20 my-4 md:my-0 p-4 md:p-8">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-slate-400 hover:text-slate-100 transition"
+          className="absolute top-3 md:top-4 right-3 md:right-4 text-slate-400 hover:text-slate-100 transition"
         >
           <X size={24} />
         </button>
@@ -56,23 +56,23 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
         {!isSubmitted ? (
           <>
             {/* Header */}
-            <div className="mb-8">
-              <p className="text-yellow-500 text-sm font-semibold tracking-wider mb-2">
+            <div className="mb-6 md:mb-8 pr-8">
+              <p className="text-yellow-500 text-xs md:text-sm font-semibold tracking-wider mb-2">
                 COHORT 1 ADMISSION
               </p>
-              <h2 className="text-4xl font-bold text-white mb-2">
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-tight">
                 Apply for The Financial Gurukulam
               </h2>
-              <p className="text-slate-400 text-sm">
+              <p className="text-slate-400 text-xs md:text-sm">
                 Limited to 20 Elite Candidates | Launching Sep 5, 2026
               </p>
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               {/* Full Name */}
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label className="block text-xs md:text-sm font-medium text-slate-300 mb-2">
                   Full Name
                 </label>
                 <input
@@ -82,14 +82,14 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
                   onChange={handleChange}
                   required
                   placeholder="e.g. Rahul Sharma"
-                  className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition text-sm"
                 />
               </div>
 
               {/* Email and Phone */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                  <label className="block text-xs md:text-sm font-medium text-slate-300 mb-2">
                     Email Address
                   </label>
                   <input
@@ -99,11 +99,11 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
                     onChange={handleChange}
                     required
                     placeholder="rahul@example.com"
-                    className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                  <label className="block text-xs md:text-sm font-medium text-slate-300 mb-2">
                     Phone Number
                   </label>
                   <input
@@ -113,14 +113,14 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
                     onChange={handleChange}
                     required
                     placeholder="+91 98765 43210"
-                    className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition text-sm"
                   />
                 </div>
               </div>
 
               {/* Educational/Professional Background */}
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label className="block text-xs md:text-sm font-medium text-slate-300 mb-2">
                   Current Educational / Professional Background
                 </label>
                 <select
@@ -128,7 +128,7 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
                   value={formData.background}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white focus:outline-none focus:border-yellow-500 transition"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white focus:outline-none focus:border-yellow-500 transition text-sm"
                 >
                   <option value="">Select your status...</option>
                   <option value="student">Undergraduate Student</option>
@@ -141,7 +141,7 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
 
               {/* Motivation */}
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label className="block text-xs md:text-sm font-medium text-slate-300 mb-2">
                   Why do you want to join this 3-month residential accelerator?
                 </label>
                 <textarea
@@ -150,14 +150,14 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
                   onChange={handleChange}
                   required
                   placeholder="Describe your career goals and interest in live finance execution..."
-                  rows="5"
-                  className="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition resize-none"
+                  rows="4"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-500 transition resize-none text-sm"
                 />
               </div>
 
               {/* Program Investment */}
-              <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
-                <p className="text-slate-300 text-sm">
+              <div className="bg-slate-900/50 rounded-lg p-3 md:p-4 border border-slate-700">
+                <p className="text-slate-300 text-xs md:text-sm">
                   <span className="font-semibold">Total Program Investment:</span>{' '}
                   <span className="text-yellow-500 font-bold">₹2,50,000</span>{' '}
                   <span className="text-slate-400">(All-Inclusive)</span>
@@ -167,7 +167,7 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition transform hover:scale-105 active:scale-95"
+                className="w-full py-3 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold rounded-lg transition transform hover:scale-105 active:scale-95 text-sm md:text-base"
               >
                 Submit Candidate Application
               </button>
@@ -175,7 +175,7 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
           </>
         ) : (
           /* Success Message */
-          <div className="text-center py-12">
+          <div className="text-center py-8 md:py-12">
             <div className="mb-6">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-500/20 rounded-full mb-4">
                 <svg
@@ -190,10 +190,10 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
                 Application Submitted!
               </h3>
-              <p className="text-slate-400">
+              <p className="text-slate-400 text-xs md:text-sm">
                 Thank you for your interest in The Financial Gurukulam. We'll review your application and get back to you shortly.
               </p>
             </div>
