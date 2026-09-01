@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import LaunchExperience from './components/LaunchExperience';
@@ -13,11 +14,15 @@ import Assessment from './components/Assessment';
 import Experience from './components/Experience';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import StudentApplicationForm from './components/StudentApplicationForm';
+import AIAssistant from './components/AIAssistant';
 
 function App() {
+  const [isApplicationFormOpen, setIsApplicationFormOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#030b18] text-slate-100">
-      <Navbar />
+      <Navbar onApplyClick={() => setIsApplicationFormOpen(true)} />
       <main>
         <Hero />
         <LaunchExperience />
@@ -34,6 +39,15 @@ function App() {
         <FAQ />
       </main>
       <Footer />
+      
+      {/* Student Application Form Modal */}
+      <StudentApplicationForm 
+        isOpen={isApplicationFormOpen}
+        onClose={() => setIsApplicationFormOpen(false)}
+      />
+      
+      {/* AI Assistant Chatbot */}
+      <AIAssistant />
     </div>
   );
 }
