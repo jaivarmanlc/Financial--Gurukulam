@@ -101,20 +101,21 @@ export default function LaunchExperience() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
-            {featureCards.map(({ title, description, icon: Icon, accent }) => (
+            {featureCards.map(({ title, description, icon: Icon, accent }, index) => (
               <article
                 key={title}
-                className={`rounded-[24px] border p-5 ${
-                  accent === 'amber'
+                className={`rounded-[24px] border p-5 ${index === featureCards.length - 1 && featureCards.length % 2 !== 0
+                    ? 'md:col-span-2'
+                    : ''
+                  } ${accent === 'amber'
                     ? 'border-yellow-400/20 bg-slate-950/75'
                     : 'border-emerald-400/20 bg-slate-950/75'
-                }`}
+                  }`}
               >
-                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border ${
-                  accent === 'amber'
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border ${accent === 'amber'
                     ? 'border-yellow-400/25 bg-yellow-500/10 text-yellow-300'
                     : 'border-emerald-400/25 bg-emerald-500/10 text-emerald-300'
-                }`}>
+                  }`}>
                   <Icon size={20} />
                 </div>
                 <h3 className="font-serif text-2xl text-slate-100">{title}</h3>
