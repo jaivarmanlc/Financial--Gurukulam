@@ -54,9 +54,9 @@ const careerSkills = [
 
 export default function LaunchExperience() {
   return (
-    <section id="launch" className="terminal-panel py-20">
+    <section id="launch" className="terminal-panel py-10 sm:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           <p className="section-kicker">Cohort 1 launch countdown</p>
           <h2 className="section-title max-w-4xl mx-auto">
             A student finance program designed to feel like a live deal room, not a classroom lecture.
@@ -64,7 +64,7 @@ export default function LaunchExperience() {
         </div>
 
         <div className="grid gap-6 xl:grid-cols-[1.05fr_1.95fr]">
-          <div className="rounded-[28px] border border-yellow-400/20 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/40 p-4 shadow-[0_0_40px_rgba(16,185,129,0.12)] flex flex-col gap-3">
+          <div className="self-start rounded-[28px] border border-yellow-400/20 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/40 p-4 shadow-[0_0_40px_rgba(16,185,129,0.12)] flex flex-col gap-2.5 w-full">
             <div className="flex items-center justify-between gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-500/10 text-yellow-300">
                 <Rocket size={20} />
@@ -74,7 +74,7 @@ export default function LaunchExperience() {
               </span>
             </div>
 
-            <div className="space-y-2.5">
+            <div className="space-y-2">
               <p className="text-[10px] uppercase tracking-[0.28em] text-slate-400">Career-ready skill stack</p>
               <h3 className="font-serif text-[2rem] leading-tight text-slate-100">Built for finance careers</h3>
               <p className="text-sm leading-6 text-slate-300">
@@ -90,7 +90,7 @@ export default function LaunchExperience() {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="mt-1 flex flex-wrap justify-center gap-2.5">
               <button className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950">
                 Apply for Cohort 1 <ArrowRight size={16} />
               </button>

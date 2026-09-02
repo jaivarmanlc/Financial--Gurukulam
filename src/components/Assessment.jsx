@@ -70,11 +70,10 @@ export default function Assessment() {
                         key={option}
                         type="button"
                         onClick={() => handleAnswer(index, optionIndex)}
-                        className={`rounded-lg border px-3 py-2 text-left text-sm transition ${
-                          selected
+                        className={`rounded-lg border px-3 py-2 text-left text-sm transition ${selected
                             ? 'border-emerald-400/60 bg-emerald-500/10 text-emerald-200'
                             : 'border-white/10 bg-slate-950/60 text-slate-300 hover:border-yellow-400/40'
-                        }`}
+                          }`}
                       >
                         {option}
                       </button>
@@ -85,7 +84,7 @@ export default function Assessment() {
             ))}
           </div>
 
-          <div className="rounded-2xl border border-yellow-400/20 bg-gradient-to-br from-yellow-500/10 via-slate-950 to-emerald-500/10 p-6 shadow-[0_0_40px_rgba(52,211,153,0.08)]">
+          <div className="self-start rounded-2xl border border-yellow-400/20 bg-gradient-to-br from-yellow-500/10 via-slate-950 to-emerald-500/10 p-6 shadow-[0_0_40px_rgba(52,211,153,0.08)]">
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-2 text-yellow-300">
                 <BarChart3 size={18} />
