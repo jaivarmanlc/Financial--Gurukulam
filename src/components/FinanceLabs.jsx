@@ -42,7 +42,7 @@ export default function FinanceLabs() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-kicker">Learn by doing</p>
-          <h2 className="section-title">Small simulations. Big execution confidence.</h2>
+          <h2 className="section-title"><span className="text-slate-100">Small simulations. </span><span className="text-yellow-400">Big</span><span className="text-slate-100"> execution </span><span className="text-emerald-400">confidence.</span></h2>
         </div>
 
         <div className="grid gap-6 xl:grid-cols-2">

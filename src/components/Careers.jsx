@@ -7,7 +7,7 @@ export default function Careers() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-kicker">Career pathways</p>
-          <h2 className="section-title">Finance roles where a practical student becomes highly employable.</h2>
+          <h2 className="section-title"><span className="text-slate-100">Finance roles where a </span><span className="text-yellow-400">practical student</span><span className="text-slate-100"> becomes </span><span className="text-emerald-400">highly employable.</span></h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

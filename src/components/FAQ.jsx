@@ -10,7 +10,7 @@ export default function FAQ() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <p className="section-kicker">FAQ</p>
-          <h2 className="section-title">Answers for students deciding if this is the right next step.</h2>
+          <h2 className="section-title"><span className="text-slate-100">Answers for students deciding if this is the </span><span className="text-yellow-400">right next step.</span></h2>
         </div>
 
         <div className="space-y-4">

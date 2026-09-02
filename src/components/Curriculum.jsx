@@ -11,7 +11,7 @@ export default function Curriculum() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-kicker">Curriculum</p>
-          <h2 className="section-title">The finance stack students need to execute, not just understand.</h2>
+          <h2 className="section-title"><span className="text-slate-100">The finance stack students need to </span><span className="text-yellow-400">execute,</span><span className="text-slate-100"> not just </span><span className="text-emerald-400">understand.</span></h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -27,11 +27,10 @@ export default function Curriculum() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: index * 0.05, duration: 0.4 }}
-                className={`cursor-pointer rounded-2xl border p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] ${
-                  isActive
+                className={`cursor-pointer rounded-2xl border p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] ${isActive
                     ? 'border-yellow-400/60 bg-slate-950/90 shadow-[0_0_0_1px_rgba(250,204,21,0.18),0_0_24px_rgba(250,204,21,0.12)]'
                     : 'border-white/10 bg-slate-950/70 hover:border-yellow-400/35 hover:bg-slate-950/80'
-                }`}
+                  }`}
               >
                 <div className="mb-4 flex items-center justify-between">
                   <span className="rounded-full border border-yellow-400/25 bg-yellow-500/5 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-yellow-300">{subtitle}</span>

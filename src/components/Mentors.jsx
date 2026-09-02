@@ -7,7 +7,7 @@ export default function Mentors() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-kicker">Industry mentors</p>
-          <h2 className="section-title">Guidance from operators who have lived the work.</h2>
+          <h2 className="section-title"><span className="text-slate-100">Guidance from </span><span className="text-yellow-400">operators</span><span className="text-slate-100"> who have </span><span className="text-emerald-400">lived the work.</span></h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">

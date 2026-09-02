@@ -31,7 +31,7 @@ export default function WhyGurukulam() {
         <div className="mb-12 flex items-center justify-between gap-3">
           <div>
             <p className="section-kicker">Why Gurukulam</p>
-            <h2 className="section-title">The missing bridge between degree and execution.</h2>
+            <h2 className="section-title"><span className="text-slate-100">The missing bridge between </span><span className="text-yellow-400">degree</span><span className="text-slate-100"> and </span><span className="text-emerald-400">execution.</span></h2>
           </div>
           <button className="hidden rounded-full border border-emerald-400/30 bg-emerald-500/5 px-4 py-2 text-sm text-emerald-300 md:inline-flex items-center gap-2">
             Student roadmap <ArrowRight size={16} />

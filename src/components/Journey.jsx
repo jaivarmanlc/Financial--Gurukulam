@@ -7,7 +7,7 @@ export default function Journey() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-kicker">90-day learning journey</p>
-          <h2 className="section-title">A progression from fundamentals to boardroom performance.</h2>
+          <h2 className="section-title"><span className="text-slate-100">A progression from </span><span className="text-yellow-400">fundamentals</span><span className="text-slate-100"> to </span><span className="text-emerald-400">boardroom performance.</span></h2>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-3">

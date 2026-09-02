@@ -59,7 +59,7 @@ export default function LaunchExperience() {
         <div className="mb-8 text-center">
           <p className="section-kicker">Cohort 1 launch countdown</p>
           <h2 className="section-title max-w-4xl mx-auto">
-            A student finance program designed to feel like a live deal room, not a classroom lecture.
+            <span className="text-slate-100">A student finance program designed to feel like a </span><span className="text-yellow-400">live deal room,</span><span className="text-slate-100"> not a </span><span className="text-emerald-400">classroom lecture.</span>
           </h2>
         </div>
 
@@ -105,16 +105,16 @@ export default function LaunchExperience() {
               <article
                 key={title}
                 className={`rounded-[24px] border p-5 ${index === featureCards.length - 1 && featureCards.length % 2 !== 0
-                    ? 'md:col-span-2'
-                    : ''
+                  ? 'md:col-span-2'
+                  : ''
                   } ${accent === 'amber'
                     ? 'border-yellow-400/20 bg-slate-950/75'
                     : 'border-emerald-400/20 bg-slate-950/75'
                   }`}
               >
                 <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border ${accent === 'amber'
-                    ? 'border-yellow-400/25 bg-yellow-500/10 text-yellow-300'
-                    : 'border-emerald-400/25 bg-emerald-500/10 text-emerald-300'
+                  ? 'border-yellow-400/25 bg-yellow-500/10 text-yellow-300'
+                  : 'border-emerald-400/25 bg-emerald-500/10 text-emerald-300'
                   }`}>
                   <Icon size={20} />
                 </div>

@@ -47,7 +47,7 @@ export default function Assessment() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <p className="section-kicker">Finance readiness assessment</p>
-          <h2 className="section-title mx-auto max-w-3xl">Check whether you are building the decision-making muscle employers expect.</h2>
+          <h2 className="section-title mx-auto max-w-3xl"><span className="text-slate-100">Check whether you are building the </span><span className="text-yellow-400">decision-making muscle</span><span className="text-slate-100"> employers </span><span className="text-emerald-400">expect.</span></h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -71,8 +71,8 @@ export default function Assessment() {
                         type="button"
                         onClick={() => handleAnswer(index, optionIndex)}
                         className={`rounded-lg border px-3 py-2 text-left text-sm transition ${selected
-                            ? 'border-emerald-400/60 bg-emerald-500/10 text-emerald-200'
-                            : 'border-white/10 bg-slate-950/60 text-slate-300 hover:border-yellow-400/40'
+                          ? 'border-emerald-400/60 bg-emerald-500/10 text-emerald-200'
+                          : 'border-white/10 bg-slate-950/60 text-slate-300 hover:border-yellow-400/40'
                           }`}
                       >
                         {option}

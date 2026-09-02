@@ -25,7 +25,7 @@ export default function Experience() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <p className="section-kicker">Student experience</p>
-          <h2 className="section-title">A rhythm built for serious finance students.</h2>
+          <h2 className="section-title"><span className="text-slate-100">A rhythm built for </span><span className="text-yellow-400">serious</span><span className="text-slate-100"> finance </span><span className="text-emerald-400">students.</span></h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-3">

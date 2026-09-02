@@ -8,7 +8,7 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-kicker">Student projects</p>
-          <h2 className="section-title">The portfolio students build while they learn.</h2>
+          <h2 className="section-title"><span className="text-slate-100">The portfolio students </span><span className="text-yellow-400">build</span><span className="text-slate-100"> while they </span><span className="text-emerald-400">learn.</span></h2>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

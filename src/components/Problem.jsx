@@ -8,7 +8,7 @@ export default function Problem() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-kicker">Degree-to-execution problem</p>
-          <h2 className="section-title mx-auto max-w-4xl">College gives you the degree. Financial Gurukulam gives you the execution engine.</h2>
+          <h2 className="section-title mx-auto max-w-4xl"><span className="text-slate-100">College gives you the </span><span className="text-yellow-400">degree.</span><span className="text-slate-100"> Financial Gurukulam gives you the </span><span className="text-emerald-400">execution engine.</span></h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">

@@ -14,8 +14,9 @@ export default function Hero() {
               Student finance immersion
             </div>
 
-            <h2 className="max-w-2xl font-serif text-4xl leading-[1.02] text-slate-100 sm:text-5xl xl:text-7xl">
-              You Have the Degree. Now Learn to Do the Work.
+            <h2 className="max-w-2xl font-serif text-4xl leading-[1.02] sm:text-5xl xl:text-7xl">
+              <span className="text-slate-100">You Have the </span><span className="text-yellow-400">Degree.</span><br />
+              <span className="text-slate-100">Now Learn to </span><span className="text-emerald-400">Do the Work.</span>
             </h2>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
