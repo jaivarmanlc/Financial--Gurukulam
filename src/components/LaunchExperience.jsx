@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -10,8 +9,6 @@ import {
   TrendingUp,
   WalletCards,
 } from 'lucide-react';
-
-const targetDate = new Date('2026-09-05T00:00:00');
 
 const featureCards = [
   {
@@ -46,32 +43,16 @@ const featureCards = [
   },
 ];
 
-function getTimeRemaining() {
-  const difference = targetDate.getTime() - Date.now();
-
-  if (difference <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  }
-
-  return {
-    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((difference / (1000 * 60)) % 60),
-    seconds: Math.floor((difference / 1000) % 60),
-  };
-}
+const careerSkills = [
+  'DCF Valuation',
+  'LBO Modeling',
+  'M&A Analysis',
+  'Investment Memo',
+  'Deal Execution',
+  'Financial Storytelling',
+];
 
 export default function LaunchExperience() {
-  const [timeLeft, setTimeLeft] = useState(getTimeRemaining);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeRemaining());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section id="launch" className="terminal-panel py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -82,38 +63,34 @@ export default function LaunchExperience() {
           </h2>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-[1.1fr_1.9fr]">
-          <div className="rounded-[28px] border border-yellow-400/20 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/40 p-6 shadow-[0_0_40px_rgba(16,185,129,0.12)]">
-            <div className="mb-5 flex items-center justify-between gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-500/10 text-yellow-300">
-                <Rocket size={22} />
+        <div className="grid gap-6 xl:grid-cols-[1.05fr_1.95fr]">
+          <div className="rounded-[28px] border border-yellow-400/20 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/40 p-4 shadow-[0_0_40px_rgba(16,185,129,0.12)] flex flex-col gap-3">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-500/10 text-yellow-300">
+                <Rocket size={20} />
               </div>
               <span className="rounded-full border border-emerald-400/30 bg-emerald-500/5 px-2 py-1 text-[10px] uppercase tracking-[0.2em] text-emerald-300">
                 Launch window
               </span>
             </div>
 
-            <p className="text-[10px] uppercase tracking-[0.28em] text-slate-400">Cohort 1 admissions</p>
-            <h3 className="mt-3 font-serif text-3xl text-slate-100">The Financial Gurukulam</h3>
-            <p className="mt-3 text-slate-300">
-              Bridging the degree-execution gap with 5 AM discipline, live models, investor simulations, and executive communication practice.
-            </p>
+            <div className="space-y-2.5">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-slate-400">Career-ready skill stack</p>
+              <h3 className="font-serif text-[2rem] leading-tight text-slate-100">Built for finance careers</h3>
+              <p className="text-sm leading-6 text-slate-300">
+                Learn the core skills employers expect from early-career investment and corporate finance talent: valuation, modeling, execution, and decision communication.
+              </p>
+            </div>
 
-            <div className="mt-7 grid grid-cols-4 gap-3">
-              {[
-                { label: 'Days', value: timeLeft.days },
-                { label: 'Hours', value: timeLeft.hours },
-                { label: 'Mins', value: timeLeft.minutes },
-                { label: 'Secs', value: timeLeft.seconds },
-              ].map((unit) => (
-                <div key={unit.label} className="rounded-2xl border border-white/10 bg-slate-950/60 p-3 text-center">
-                  <p className="text-2xl font-bold text-yellow-300">{String(unit.value).padStart(2, '0')}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-slate-400">{unit.label}</p>
+            <div className="grid grid-cols-2 gap-2.5">
+              {careerSkills.map((skill) => (
+                <div key={skill} className="rounded-2xl border border-white/10 bg-slate-950/60 px-2 py-2.5 text-center text-[10px] uppercase tracking-[0.16em] text-slate-200">
+                  {skill}
                 </div>
               ))}
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3">
               <button className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950">
                 Apply for Cohort 1 <ArrowRight size={16} />
               </button>
