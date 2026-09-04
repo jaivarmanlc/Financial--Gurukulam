@@ -21,7 +21,7 @@ function App() {
   const [isApplicationFormOpen, setIsApplicationFormOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#030b18] text-slate-100">
+    <div className="min-h-screen bg-[#FEC700] text-[#123b25]">
       <Navbar onApplyClick={() => setIsApplicationFormOpen(true)} />
       <main>
         <Hero />

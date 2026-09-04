@@ -1,2 +1,5 @@
 gurukulamstudent.mp4
 node_modules
+dist/
+.env
+.env.*
