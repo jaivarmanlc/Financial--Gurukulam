@@ -5,12 +5,14 @@ export default function Navbar({ onApplyClick }) {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#020b16]/80 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 w-[205px] min-w-0 items-center sm:h-24 sm:w-[255px]">
-          <img
-            src="/images/Gemini_Generated_Image_plmcm2plmcm2plmc.png"
-            alt="Commerce Gurukulam"
-            className="h-full w-full object-contain mix-blend-screen"
-          />
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-yellow-400/40 bg-gradient-to-br from-yellow-400/20 to-emerald-400/20 text-sm font-bold text-yellow-300 shadow-[0_0_20px_rgba(234,179,8,0.15)]">
+            FG
+          </div>
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.28em] text-slate-400">Financial</p>
+            <h1 className="font-serif text-xl tracking-wide text-slate-100">Gurukulam</h1>
+          </div>
         </div>
 
         <div className="hidden items-center gap-7 md:flex">
