@@ -77,7 +77,7 @@ function App() {
       />
 
       {/* AI Assistant Chatbot */}
-      <AIAssistant />
+      <AIAssistant onApplyClick={() => setIsApplicationFormOpen(true)} />
 
       {/* Floating WhatsApp Action Button */}
       <WhatsAppButton />
