@@ -138,14 +138,78 @@ export const studentProjects = [
 ];
 
 export const careerPaths = [
-  'Investment Banking Analyst',
-  'Private Equity Associate',
-  'Corporate Finance Manager',
-  'Valuation Specialist',
-  'VC Investment Analyst',
-  'Transaction Advisory Specialist',
-  'Forensic Accounting Expert',
-  'FinTech & AI Finance Strategist'
+  {
+    id: 1,
+    title: 'Investment Banking Analyst',
+    tag: 'Marquee IB Role',
+    skills: ['M&A Pitch Books', 'LBO Modeling', 'Comps Valuation'],
+    demand: '🔥 High Hiring Demand',
+    icon: 'TrendingUp'
+  },
+  {
+    id: 2,
+    title: 'Private Equity Associate',
+    tag: 'Sponsor Buyouts',
+    skills: ['Debt Sizing', 'MOIC & IRR Math', 'Cap Tables'],
+    demand: '💎 Elite Compensation',
+    icon: 'PieChart'
+  },
+  {
+    id: 3,
+    title: 'Corporate Finance Manager',
+    tag: 'C-Suite Strategy',
+    skills: ['Capital Allocation', 'Financial Planning', 'Budgeting'],
+    demand: '📈 Rapid Career Track',
+    icon: 'Building2'
+  },
+  {
+    id: 4,
+    title: 'Valuation Specialist',
+    tag: 'Equity Research',
+    skills: ['3-Statement DCF', 'WACC Calculations', 'Scenario Analysis'],
+    demand: '🎯 High Technical Focus',
+    icon: 'Layers'
+  },
+  {
+    id: 5,
+    title: 'VC Investment Analyst',
+    tag: 'Startup Deal Flow',
+    skills: ['Term Sheet Mechanics', 'Dilution Math', 'Cap Table Waterfall'],
+    demand: '🚀 High Growth Sector',
+    icon: 'Rocket'
+  },
+  {
+    id: 6,
+    title: 'Transaction Advisory Specialist',
+    tag: 'Big-4 & Boutiques',
+    skills: ['Quality of Earnings', 'Due Diligence', 'Deal Structuring'],
+    demand: '💼 Direct Placement',
+    icon: 'Briefcase'
+  },
+  {
+    id: 7,
+    title: 'Forensic Accounting Expert',
+    tag: 'Fraud & Audit Labs',
+    skills: ['Balance Sheet Red Flags', 'Earnings Review', 'Audit Forensics'],
+    demand: '🛡️ High Demand Skill',
+    icon: 'ShieldCheck'
+  },
+  {
+    id: 8,
+    title: 'FinTech & AI Finance Strategist',
+    tag: 'Next-Gen Workflows',
+    skills: ['AI SEC Extraction', 'Automated Briefs', 'Prompt Engineering'],
+    demand: '🤖 Future-Proof Role',
+    icon: 'Cpu'
+  },
+  {
+    id: 9,
+    title: 'M&A Deal Execution Specialist',
+    tag: 'Boardroom Advisory',
+    skills: ['Synergy Modeling', 'Accretion / Dilution', 'Pitch Defenses'],
+    demand: '🏆 C-Suite Direct Pipeline',
+    icon: 'Award'
+  }
 ];
 
 export const faqs = [
