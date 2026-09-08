@@ -6,50 +6,53 @@ const questions = [
   {
     prompt: 'Why did you choose Commerce & Finance as your core career path?',
     options: [
-      'To build a high-impact career in Investment Banking, Valuation, and Corporate Finance',
-      'To get a basic degree and look for routine office jobs',
-      'Because my friends chose it without much thought',
-      'I am still unsure about my long-term career direction'
-    ],
-    correct: 0
+      { text: 'To build a high-impact career in Investment Banking, Valuation, and Corporate Finance', weight: 25 },
+      { text: 'To get a basic degree and look for routine office jobs', weight: 15 },
+      { text: 'Because my friends chose it without much thought', weight: 10 },
+      { text: 'I am still unsure about my long-term career direction', weight: 5 }
+    ]
   },
   {
     prompt: 'Why do you want to study this 3-month practical execution course?',
     options: [
-      'To build live financial models, master deal structuring, and stand out in placement interviews',
-      'To read more college textbooks and memorize definitions',
-      'Just to collect a generic course participation certificate',
-      'To pass time while waiting for campus drives'
-    ],
-    correct: 0
+      { text: 'To build live financial models, master deal structuring, and stand out in placement interviews', weight: 25 },
+      { text: 'To read more college textbooks and memorize definitions', weight: 15 },
+      { text: 'Just to collect a generic course participation certificate', weight: 10 },
+      { text: 'To pass time while waiting for campus drives', weight: 5 }
+    ]
   },
   {
     prompt: 'What is your primary objective after completing your graduation?',
     options: [
-      'Secure a high-tier role in Investment Banking, PE, VC, or Corporate Finance',
-      'Settle for a low-paying back-office entry job',
-      'Wait for internships without having practical modeling skills',
-      'Take a break without a clear career roadmap'
-    ],
-    correct: 0
+      { text: 'Secure a high-tier role in Investment Banking, PE, VC, or Corporate Finance', weight: 25 },
+      { text: 'Settle for a low-paying back-office entry job', weight: 15 },
+      { text: 'Wait for internships without having practical modeling skills', weight: 10 },
+      { text: 'Take a break without a clear career roadmap', weight: 5 }
+    ]
   },
   {
     prompt: 'How do you believe real financial expertise and confidence are built?',
     options: [
-      'Through live deal-building, C-suite mentor feedback, and boardroom pitch defenses',
-      'By memorizing accounting formulas the night before college exams',
-      'By watching passive video lectures without opening Excel',
-      'By relying strictly on college textbook chapters'
-    ],
-    correct: 0
+      { text: 'Through live deal-building, C-suite mentor feedback, and boardroom pitch defenses', weight: 25 },
+      { text: 'By memorizing accounting formulas the night before college exams', weight: 15 },
+      { text: 'By watching passive video lectures without opening Excel', weight: 10 },
+      { text: 'By relying strictly on college textbook chapters', weight: 5 }
+    ]
   }
 ];
 
 export default function Assessment() {
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
 
-  const score = useMemo(() => {
-    return answers.reduce((total, answer, index) => total + (answer === questions[index].correct ? 1 : 0), 0);
+  const answeredCount = useMemo(() => {
+    return answers.filter(a => a !== null).length;
+  }, [answers]);
+
+  const readiness = useMemo(() => {
+    return answers.reduce((total, answerIndex, qIndex) => {
+      if (answerIndex === null) return total;
+      return total + questions[qIndex].options[answerIndex].weight;
+    }, 0);
   }, [answers]);
 
   const handleAnswer = (questionIndex, optionIndex) => {
@@ -59,8 +62,6 @@ export default function Assessment() {
       return next;
     });
   };
-
-  const readiness = Math.round((score / questions.length) * 100);
 
   return (
     <section id="assessment-section" className="terminal-panel py-20">
@@ -92,7 +93,7 @@ export default function Assessment() {
                     const selected = answers[index] === optionIndex;
                     return (
                       <button
-                        key={option}
+                        key={option.text}
                         type="button"
                         onClick={() => handleAnswer(index, optionIndex)}
                         className={`rounded-lg border px-3.5 py-2.5 text-left text-sm transition font-medium ${selected
@@ -100,7 +101,7 @@ export default function Assessment() {
                           : 'border-white/10 bg-slate-950/60 text-slate-300 hover:border-yellow-400/40 hover:text-white'
                           }`}
                       >
-                        {option}
+                        {option.text}
                       </button>
                     );
                   })}
@@ -126,10 +127,10 @@ export default function Assessment() {
             </div>
 
             <div className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Career Alignment Score</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Assessment Progress</p>
               <div className="mt-1 flex items-baseline gap-2">
-                <span className="text-3xl font-black text-emerald-300">{score}/{questions.length}</span>
-                <span className="text-xs text-slate-400">Questions Matched</span>
+                <span className="text-3xl font-black text-emerald-300">{answeredCount}/{questions.length}</span>
+                <span className="text-xs text-slate-400">Questions Answered</span>
               </div>
             </div>
 
