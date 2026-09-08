@@ -29,7 +29,7 @@ export default function Footer() {
             <p className="mt-2">Commerce & finance execution for serious students.</p>
           </div>
           <div className="flex flex-col gap-2 md:items-end">
-            <div className="flex items-center gap-2"><MapPin size={15} /> Bengaluru / Remote learning</div>
+            <div className="flex items-center gap-2"><MapPin size={15} /> Chennai / Remote learning</div>
             <a href="https://wa.me/918428881144" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition">
               <Phone size={15} /> +91 84288 81144
             </a>
