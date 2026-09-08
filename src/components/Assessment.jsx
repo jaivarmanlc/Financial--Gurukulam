@@ -109,8 +109,8 @@ export default function Assessment() {
             ))}
           </div>
 
-          <div className="self-start rounded-2xl border border-yellow-400/20 bg-gradient-to-br from-yellow-500/10 via-slate-950 to-emerald-500/10 p-6 shadow-[0_0_40px_rgba(52,211,153,0.08)]">
-            <div className="mb-6 flex items-center justify-between">
+          <div className="sticky top-24 self-start rounded-2xl border border-yellow-400/20 bg-gradient-to-br from-yellow-500/10 via-slate-950 to-emerald-500/10 p-6 shadow-[0_0_40px_rgba(52,211,153,0.08)] space-y-5">
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-yellow-300">
                 <BarChart3 size={18} />
                 <span className="text-sm font-bold uppercase tracking-[0.2em]">Program Alignment</span>
@@ -118,40 +118,61 @@ export default function Assessment() {
               <span className="text-xl font-bold text-slate-100">{readiness}%</span>
             </div>
 
-            <div className="mb-6 h-3 overflow-hidden rounded-full bg-slate-800/80">
+            <div className="h-3 overflow-hidden rounded-full bg-slate-800/80">
               <div
                 className="h-full rounded-full bg-gradient-to-r from-yellow-400 via-emerald-400 to-emerald-500 transition-all duration-500"
                 style={{ width: `${readiness}%` }}
               />
             </div>
 
-            <div className="space-y-4">
-              <div className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Career Alignment Score</p>
-                <p className="mt-2 text-3xl font-black text-emerald-300">{score}/{questions.length}</p>
+            <div className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Career Alignment Score</p>
+              <div className="mt-1 flex items-baseline gap-2">
+                <span className="text-3xl font-black text-emerald-300">{score}/{questions.length}</span>
+                <span className="text-xs text-slate-400">Questions Matched</span>
               </div>
+            </div>
 
-              <div className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
-                <div className="mb-2 flex items-center gap-2 text-emerald-300">
-                  <CheckCircle2 size={16} />
-                  <span className="text-sm font-bold uppercase tracking-[0.18em]">Fit Evaluation</span>
-                </div>
-                <p className="text-sm leading-6 text-slate-300">
-                  {readiness >= 75
-                    ? 'You have clear career ambition! Commerce Gurukulam is built for driven students like you who want live deal-room execution and top-tier placements.'
-                    : readiness >= 50
-                      ? 'You know you want a serious finance career. This program will convert your basic degree knowledge into practical deal modeling skills.'
-                      : 'You are evaluating your future options. Commerce Gurukulam will provide the structure, clarity, and skills needed for a high-growth career.'}
-                </p>
+            <div className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
+              <div className="mb-2 flex items-center gap-2 text-emerald-300">
+                <CheckCircle2 size={16} />
+                <span className="text-sm font-bold uppercase tracking-[0.18em]">Fit Evaluation</span>
               </div>
+              <p className="text-xs md:text-sm leading-relaxed text-slate-300">
+                {readiness >= 75
+                  ? 'You have clear career ambition! Commerce Gurukulam is built for driven students like you who want live deal-room execution and top-tier placements.'
+                  : readiness >= 50
+                    ? 'You know you want a serious finance career. This program will convert your basic degree knowledge into practical deal modeling skills.'
+                    : 'You are evaluating your future options. Commerce Gurukulam will provide the structure, clarity, and skills needed for a high-growth career.'}
+              </p>
+            </div>
 
-              <div className="rounded-xl border border-yellow-400/20 bg-yellow-500/5 p-4">
-                <div className="mb-2 flex items-center gap-2 text-yellow-200">
-                  <Sparkles size={16} />
-                  <span className="text-sm font-bold uppercase tracking-[0.18em]">Next Action</span>
-                </div>
-                <p className="text-sm leading-6 text-slate-300">Apply for candidate screening to lock in your seat for the upcoming 3-month residential cohort.</p>
+            {/* Added Cohort Advantages Summary Box */}
+            <div className="rounded-xl border border-white/10 bg-slate-900/60 p-4 space-y-2">
+              <p className="text-xs font-bold text-yellow-400 uppercase tracking-wider">🎯 What You Master in 3 Months:</p>
+              <ul className="text-xs text-slate-300 space-y-1.5 list-disc pl-4 leading-relaxed">
+                <li>Wall Street & Dalal Street LBO Modeling</li>
+                <li>AI SEC Filing Extraction & Forensic Audit</li>
+                <li>5:00 AM Discipline & Boardroom Pitch Defenses</li>
+                <li>100% Placement Referral Support</li>
+              </ul>
+            </div>
+
+            <div className="rounded-xl border border-yellow-400/30 bg-yellow-500/10 p-4 text-center">
+              <div className="mb-2 flex items-center justify-center gap-2 text-yellow-200">
+                <Sparkles size={16} />
+                <span className="text-xs font-bold uppercase tracking-[0.18em]">Lock Your Seat</span>
               </div>
+              <p className="text-xs text-slate-300 mb-3">Strictly limited to 40 candidates per cohort.</p>
+              <button
+                onClick={() => {
+                  const applyBtn = document.querySelector('button[data-apply]') || document.querySelector('nav button');
+                  if (applyBtn) applyBtn.click();
+                }}
+                className="w-full py-2.5 bg-gradient-to-r from-yellow-400 to-emerald-400 text-slate-950 font-bold rounded-lg transition text-xs uppercase tracking-wider cursor-pointer hover:scale-[1.02] shadow-[0_0_20px_rgba(234,179,8,0.2)]"
+              >
+                Apply for Screening Interview
+              </button>
             </div>
           </div>
         </div>
