@@ -64,48 +64,82 @@ export default function LaunchExperience() {
         </div>
 
         <div className="grid gap-6 xl:grid-cols-[1.05fr_1.95fr]">
-          <div className="self-start rounded-[28px] border border-yellow-400/20 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/40 p-4 shadow-[0_0_40px_rgba(16,185,129,0.12)] flex flex-col gap-2.5 w-full">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-500/10 text-yellow-300">
-                <Rocket size={20} />
-              </div>
-              <span className="rounded-full border border-emerald-400/30 bg-emerald-500/5 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-300">
-                STRICT COHORT SELECTION
-              </span>
-            </div>
-
-            <div className="space-y-2">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-400">Career-ready skill stack</p>
-              <h3 className="font-serif text-[2rem] leading-tight text-slate-100">Built for Top 1% Finance Careers</h3>
-              <p className="text-sm leading-6 text-slate-300">
-                Master the core deal execution skills that top investment banks and VC firms demand: valuation, modeling, transaction structuring, and boardroom presentation.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-2.5">
-              {careerSkills.map((skill) => (
-                <div key={skill} className="rounded-2xl border border-white/10 bg-slate-950/60 px-2 py-2.5 text-center text-[10px] uppercase tracking-[0.16em] text-slate-200">
-                  {skill}
+          {/* Left Column Stack */}
+          <div className="flex flex-col gap-5">
+            <div className="rounded-[28px] border border-yellow-400/20 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/40 p-5 shadow-[0_0_40px_rgba(16,185,129,0.12)] flex flex-col gap-3 w-full">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-500/10 text-yellow-300">
+                  <Rocket size={20} />
                 </div>
-              ))}
+                <span className="rounded-full border border-emerald-400/30 bg-emerald-500/5 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-300">
+                  STRICT COHORT SELECTION
+                </span>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-400">Career-ready skill stack</p>
+                <h3 className="font-serif text-[2rem] leading-tight text-slate-100">Built for Top 1% Finance Careers</h3>
+                <p className="text-sm leading-6 text-slate-300">
+                  Master the core deal execution skills that top investment banks and VC firms demand: valuation, modeling, transaction structuring, and boardroom presentation.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2.5">
+                {careerSkills.map((skill) => (
+                  <div key={skill} className="rounded-2xl border border-white/10 bg-slate-950/60 px-2 py-2.5 text-center text-[10px] uppercase tracking-[0.16em] text-slate-200">
+                    {skill}
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-1 flex flex-wrap justify-center gap-2.5">
+                <button 
+                  onClick={() => {
+                    const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
+                    if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-emerald-400 px-5 py-3 text-sm font-bold text-slate-950 hover:scale-105 transition cursor-pointer"
+                >
+                  Apply For Executive Immersion <ArrowRight size={16} />
+                </button>
+                <a 
+                  href="#mentors"
+                  className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-200 hover:border-emerald-400/30 transition"
+                >
+                  Explore Mentors
+                </a>
+              </div>
             </div>
 
-            <div className="mt-1 flex flex-wrap justify-center gap-2.5">
-              <button 
-                onClick={() => {
-                  const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
-                  if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-emerald-400 px-5 py-3 text-sm font-bold text-slate-950 hover:scale-105 transition cursor-pointer"
-              >
-                Apply For Executive Immersion <ArrowRight size={16} />
-              </button>
-              <a 
-                href="#mentors"
-                className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-200 hover:border-emerald-400/30 transition"
-              >
-                Explore Mentors
-              </a>
+            {/* 5:00 AM Immersion Breakdown Card to fill vertical height */}
+            <div className="rounded-[28px] border border-emerald-400/20 bg-slate-950/80 p-5 shadow-lg flex flex-col justify-between">
+              <div className="flex items-center gap-2 text-emerald-400 mb-3">
+                <ShieldCheck size={18} />
+                <span className="text-xs font-bold uppercase tracking-[0.2em]">5:00 AM Daily Execution Protocol</span>
+              </div>
+
+              <div className="space-y-2.5 text-xs text-slate-300">
+                <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <span className="font-bold text-yellow-300">05:00 AM</span>
+                  <span>Mindset Conditioning & Market Briefing</span>
+                </div>
+                <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <span className="font-bold text-emerald-300">09:00 AM</span>
+                  <span>Wall Street & Dalal Street LBO Modeling</span>
+                </div>
+                <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <span className="font-bold text-yellow-300">02:00 PM</span>
+                  <span>AI SEC Extraction & Forensic Audit Lab</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-bold text-emerald-300">06:00 PM</span>
+                  <span>CFO Mentor War Room & Boardroom Defense</span>
+                </div>
+              </div>
+
+              <div className="mt-4 rounded-xl border border-yellow-400/20 bg-yellow-500/5 p-3 text-[11px] text-slate-300 leading-relaxed">
+                <span className="font-bold text-yellow-300">Zero Textbooks:</span> 100% immersive, hands-on financial modeling using real Wall Street & Dalal Street deal data.
+              </div>
             </div>
           </div>
 
