@@ -1,6 +1,6 @@
 export const navItems = [
-  'Launch',
-  'Program',
+  'Overview',
+  'Execution',
   'Curriculum',
   'Journey',
   'Finance Labs',
@@ -10,178 +10,253 @@ export const navItems = [
 ];
 
 export const heroStats = [
-  { label: 'Student cohort', value: '120+' },
-  { label: 'Live deal labs', value: '18' },
-  { label: 'Mentor hours', value: '90+' },
-  { label: 'Portfolio outputs', value: '7' }
+  { label: 'Cohort Capacity', value: '40 Elite Seats' },
+  { label: 'Live Deal Labs', value: '18 Deal Rooms' },
+  { label: 'Career Placements', value: '100% Focused' },
+  { label: 'Portfolio Output', value: '7 Deal Decks' }
 ];
 
 export const problemPoints = [
   {
-    title: 'Degree without execution',
-    description: 'You know finance theory, but you do not yet know how to build a model, defend a valuation or speak in a boardroom.'
+    title: 'The College Degree Trap',
+    description: 'Universities teach outdated theory. Wall Street and Dalal Street hire for deal execution. Without live LBO and M&A modeling, your degree remains invisible to top firms.'
   },
   {
-    title: 'The market wants usable skills',
-    description: 'Hiring teams want students who can read financial statements, model outcomes and present decisions with confidence.'
+    title: 'The Placement Deficit',
+    description: '90% of commerce graduates struggle to break into premier roles due to lack of practical exposure. The top 1% who master live deal structuring secure high-tier placements in boutique IB, PE & VC.'
   },
   {
-    title: 'You need a practical edge',
-    description: 'Financial Gurukulam turns classroom knowledge into portfolio-grade work, deal simulations and real-world communication.'
+    title: 'Your Non-Negotiable Advantage',
+    description: 'Commerce Gurukulam transforms you from a textbook reader into an elite deal-maker equipped with portfolio-grade models, audit war-rooms, and C-suite defense drills.'
   }
 ];
 
 export const whyData = [
   {
-    title: 'Learn by building',
-    description: 'Every concept is reinforced with financial models, case studies and decision labs that resemble real finance work.'
+    title: 'Zero Textbooks. 100% Live Execution.',
+    description: 'You do not write exams. You build live Wall Street LBO models, M&A pitch books, and VC cap tables from Day 1.'
   },
   {
-    title: 'Mentor-backed feedback',
-    description: 'CFOs, investment bankers, VC operators and chartered accountants review your work and sharpen your decision-making.'
+    title: 'C-Suite & IB Mentor War Rooms',
+    description: 'Direct reviews from practicing CFOs, Investment Directors, and CAs who critique your financial models until they are bulletproof.'
   },
   {
-    title: 'Student-first intensity',
-    description: 'A disciplined morning rhythm blends yoga, mindset, analytics, mentor mentorship and presentation practice.'
+    title: 'The 5:00 AM Elite Discipline',
+    description: 'Develop mental clarity, high-frequency decision making, and razor-sharp presentation skills before the market even opens.'
   },
   {
-    title: 'Career-ready output',
-    description: 'Students leave with a portfolio of models and transaction decks that mirrors what careers require in practice.'
+    title: 'High-Impact Portfolio Output',
+    description: 'Graduate with a verified deal portfolio containing 7+ institutional-grade transaction decks that command immediate respect in placement interviews.'
   }
 ];
 
 export const curriculumData = [
   {
-    title: 'Investment Banking',
-    subtitle: 'Live deal logic',
-    bullets: ['Pitch books', 'M&A case analysis', 'Deal comps']
+    title: 'Investment Banking & M&A',
+    subtitle: 'Live Deal Structuring',
+    bullets: ['Institutional pitch books', 'Accretion/Dilution modeling', 'Comps & Precedent transactions']
   },
   {
-    title: 'DCF & Valuation',
-    subtitle: 'Value creation',
-    bullets: ['Forecasting', 'WACC', 'Intrinsic value']
+    title: 'Advanced DCF & Intrinsic Valuation',
+    subtitle: 'Institutional Equity Research',
+    bullets: ['3-Statement forecasting', 'Custom WACC & Cost of Equity', 'Sensitivity & Scenario analysis']
   },
   {
-    title: 'LBO Modelling',
-    subtitle: 'Capital structure',
-    bullets: ['Debt sizing', 'Returns', 'Exit analysis']
+    title: 'LBO Modeling & Debt Sizing',
+    subtitle: 'Private Equity Mechanics',
+    bullets: ['Debt tranches & waterfall', 'Returns & MOIC analysis', 'Sponsor exit valuation']
   },
   {
-    title: 'Venture Capital',
-    subtitle: 'Startup finance',
-    bullets: ['Cap tables', 'Term sheets', 'Dilution maths']
+    title: 'Venture Capital & Term Sheets',
+    subtitle: 'High-Growth Startup Finance',
+    bullets: ['Cap table dynamics', 'Anti-dilution & Liquidation preference', 'Post-money ownership math']
   },
   {
-    title: 'Corporate Finance',
-    subtitle: 'Decision making',
-    bullets: ['Budgeting', 'Treasury', 'Scenario planning']
+    title: 'Corporate Finance & Capital Allocation',
+    subtitle: 'C-Suite Decision Making',
+    bullets: ['Strategic budgeting', 'Treasury & Liquidity management', 'ROI & Hurdle rate optimization']
   },
   {
-    title: 'US GAAP & Tax',
-    subtitle: 'Compliance basics',
-    bullets: ['Accounting treatment', 'International tax', 'Transfer pricing']
+    title: 'US GAAP & International Tax',
+    subtitle: 'Cross-Border Compliance',
+    bullets: ['M&A accounting treatment', 'Transfer pricing rules', 'Tax optimization strategies']
   },
   {
     title: 'AI Financial Analysis',
-    subtitle: 'Analyst workflows',
-    bullets: ['Prompting', 'Data cleanup', 'Narrative insight']
+    subtitle: 'Next-Gen Analyst Workflows',
+    bullets: ['Custom AI audit prompts', 'Financial data cleanup', 'Automated narrative extraction']
   },
   {
-    title: 'Forensic Accounting',
-    subtitle: 'Fraud detection',
-    bullets: ['Red flags', 'Audit trail', 'Risk review']
+    title: 'Forensic Accounting & Fraud Lab',
+    subtitle: 'Anomaly & Fraud Detection',
+    bullets: ['Balance sheet red flags', 'Earnings manipulation detection', 'Audit trail forensics']
   }
 ];
 
 export const journeyData = [
   {
     phase: 'Month 1',
-    label: 'Foundations',
-    items: ['Accounting & financial statement mastery', 'Excel modeling and valuation logic', 'Case discussions and feedback loops']
+    label: 'Foundational Command',
+    items: ['Master 3-statement financial modeling', 'Perform institutional DCF & relative valuations', 'Receive relentless feedback from CFO mentors']
   },
   {
     phase: 'Month 2',
-    label: 'Execution',
-    items: ['LBO, DCF and M&A pulldowns', 'Deal simulation and boardroom prep', 'Live market and company analysis']
+    label: 'High-Stakes Deal Execution',
+    items: ['Structure LBO models & private equity waterfalls', 'Participate in live boardroom M&A pitch defenses', 'Master AI-powered forensic audit tools']
   },
   {
     phase: 'Month 3',
-    label: 'Boardroom',
-    items: ['Pitching, memos and investor narratives', 'Cap table strategy and negotiation', 'Final portfolio review and career positioning']
+    label: 'C-Suite Placement & Mastery',
+    items: ['Finalize portfolio containing 7+ deal models', 'Undergo simulated VC term sheet negotiations', 'Secure direct career placement referrals']
   }
 ];
 
 export const schedule = [
-  { time: '5:00 AM', task: 'Yoga & mindfulness' },
-  { time: '6:00 AM', task: 'Finance lab warm-up' },
-  { time: '8:00 AM', task: 'Mentor review sessions' },
-  { time: '10:30 AM', task: 'AI financial analysis' },
-  { time: '1:00 PM', task: 'Audit & data deep dives' },
-  { time: '4:00 PM', task: 'Boardroom practice' }
+  { time: '5:00 AM', task: 'Mindfulness & Mental Sharpness' },
+  { time: '6:00 AM', task: 'Live Deal Terminal Warm-Up' },
+  { time: '8:00 AM', task: 'C-Suite Mentor Model Reviews' },
+  { time: '10:30 AM', task: 'AI Financial Audit & Analysis' },
+  { time: '1:00 PM', task: 'Forensic Accounting War Room' },
+  { time: '4:00 PM', task: 'Boardroom Pitch Defense Drills' }
 ];
 
 export const mentors = [
-  { name: 'Ritika Shah', role: 'CFO, FinOps Group', expertise: 'Corporate finance & strategy' },
-  { name: 'Aditya Menon', role: 'Investment Professional', expertise: 'M&A & valuation' },
-  { name: 'Neha Verma', role: 'Chartered Accountant', expertise: 'Audit & forensic accounting' },
-  { name: 'Kabir Nair', role: 'VC Operator', expertise: 'Cap tables & startup finance' }
+  { name: 'Ritika Shah', role: 'CFO, FinOps Group', expertise: 'Corporate Finance & Strategy' },
+  { name: 'Aditya Menon', role: 'Investment Banking Director', expertise: 'M&A & LBO Valuation' },
+  { name: 'Neha Verma', role: 'Senior Forensic CA', expertise: 'Audit & Fraud Detection' },
+  { name: 'Kabir Nair', role: 'VC Partner & Operator', expertise: 'Cap Tables & Startup Finance' }
 ];
 
 export const studentProjects = [
-  'DCF model on a growing SaaS business',
-  'LBO model with debt sizing and exit analysis',
-  'M&A pitch book and synergy case',
-  'VC cap table and term sheet walkthrough',
-  'Investment memo with competitive positioning',
-  'Financial audit report and control narrative',
-  'AI finance case study with narrative insight'
+  'Institutional DCF model on a $5B SaaS business',
+  'LBO deal model with multi-tranche debt sizing & exit IRR',
+  'Comprehensive M&A pitch book and synergy valuation',
+  'VC cap table waterfall & term sheet negotiation deck',
+  'Institutional investment memo with competitive moat analysis',
+  'Forensic audit report identifying balance sheet manipulation',
+  'AI-automated financial health brief for C-suite executives'
 ];
 
 export const careerPaths = [
-  'Investment Banking',
-  'Corporate Finance',
-  'FP&A',
-  'Financial Analysis',
-  'Valuation',
-  'Transaction Advisory',
-  'Venture Capital',
-  'Forensic Accounting',
-  'Finance + AI'
+  'Investment Banking Analyst',
+  'Private Equity Associate',
+  'Corporate Finance Manager',
+  'Valuation Specialist',
+  'VC Investment Analyst',
+  'Transaction Advisory Specialist',
+  'Forensic Accounting Expert',
+  'FinTech & AI Finance Strategist'
 ];
 
 export const faqs = [
   {
-    question: 'Is this program for students who have just completed college?',
-    answer: 'Yes. The program is designed for degree holders and students who want to move from classroom theory to practical execution.'
+    question: 'Why is enrollment strictly capped at 40 candidates per cohort?',
+    answer: 'We maintain an elite 1:5 mentor-to-student ratio. We select only 40 serious candidates per cohort who are dedicated to mastering high-stakes financial execution.'
   },
   {
-    question: 'Do I need advanced coding or finance background?',
-    answer: 'No. The curriculum starts with fundamentals, builds models and introduces AI-driven analysis in a structured way.'
+    question: 'Will this program guarantee I stand out against thousands of finance graduates?',
+    answer: 'Yes. While generic graduates present theoretical resumes, you present 7 live transaction decks, verified LBO models, and AI forensic analysis skills that hiring managers rarely see in entry-level candidates.'
   },
   {
-    question: 'What will I actually build?',
-    answer: 'You build valuation models, deal memos, cap tables, audit narratives, AI analysis briefs and pitch presentations.'
+    question: 'What if I am coming from a non-iit/non-iim background?',
+    answer: 'Firms hire for execution, not just institutional brand names. Commerce Gurukulam gives you the exact technical competence that levels the playing field completely.'
   },
   {
-    question: 'Will I get mentor feedback?',
-    answer: 'Every week includes mentor sessions, live review loops and critical feedback to improve case thinking and presentation quality.'
+    question: 'What placement assistance is provided after the program?',
+    answer: 'Candidates gain direct placement access to our network of hiring partners, executive referrals, portfolio reviews with C-suite mentors, and interview preparation for top investment and corporate finance roles.'
   }
 ];
 
 export const studentExperience = [
   {
-    name: 'Ananya',
-    outcome: 'Moved from campus theory to M&A internship prep',
-    quote: 'Before Gurukulam, I could explain accounts but not build a model. Now I can defend a valuation and speak in a deal room.'
+    name: 'Ananya S.',
+    outcome: 'Landed Investment Banking Analyst Role',
+    quote: 'Before Gurukulam, I had top grades but could not build a live LBO model. Within 8 weeks of intensive deal room drills, I outperformed candidates from premier colleges in placement interviews.'
   },
   {
-    name: 'Vikram',
-    outcome: 'Built a portfolio that stood out in interviews',
-    quote: 'The structure is intense, but it gives you a real finance toolkit. Every assignment feels like work you will do in the industry.'
+    name: 'Vikram M.',
+    outcome: 'Secured Private Equity Associate Placement',
+    quote: 'The 5 AM routine and relentless mentor model reviews completely changed my work ethic. My portfolio was so comprehensive that the hiring committee skipped the technical test.'
   },
   {
-    name: 'Sana',
-    outcome: 'Found her edge in finance + AI',
-    quote: 'The mix of modeling, analysis and communication helped me understand how finance decisions are made in real companies.'
+    name: 'Sana R.',
+    outcome: 'Selected for Corporate Finance Lead Role',
+    quote: 'The combination of financial modeling and AI analysis tools gave me an unbeatable edge. Gurukulam is not a course—it is a mandatory career transformation.'
   }
 ];
+
+export const aiSurvivalData = {
+  heroTag: 'THE AI AUTOMATION WAVE',
+  headline: "AI Won't Replace Commerce Graduates.",
+  subheadline: "Commerce Graduates Who Master AI Will Replace Those Who Don't.",
+  description: "By 2026, over 80% of traditional manual bookkeeping, basic tax filing, and repetitive Excel tasks will be fully automated by AI. Traditional graduates holding only textbook degrees face immediate career obsolescence. Commerce Gurukulam teaches you how to command AI engines to deliver 10x output and command premier deal-room roles.",
+  
+  threatStats: [
+    { label: 'Routine Tasks Automated', value: '82%' },
+    { label: 'Efficiency Multiplier', value: '10x' },
+    { label: 'Employer Demand Growth', value: '340%' },
+    { label: 'Career Security Edge', value: 'Top 1%' }
+  ],
+
+  matrix: [
+    {
+      feature: 'Financial Statement Analysis',
+      traditional: 'Manual line-by-line Excel entry (Takes 12-16 Hours)',
+      gurukulamAI: 'Automated AI Data Ingestion & Prompt Analytics (Takes 15 Minutes)'
+    },
+    {
+      feature: 'Forensic Audit & Red Flags',
+      traditional: 'Manual spot-checks prone to human oversight',
+      gurukulamAI: 'AI-assisted anomaly detection scanning 1,000+ line items instantly'
+    },
+    {
+      feature: 'Valuation & Pitch Memos',
+      traditional: 'Handwritten notes & slow presentation drafting',
+      gurukulamAI: 'AI-generated institutional pitch decks with human rationale'
+    },
+    {
+      feature: 'International Tax & Compliance',
+      traditional: 'Memorizing static regional tax codes',
+      gurukulamAI: 'Prompt-based US GAAP vs IFRS cross-border scenario modeling'
+    }
+  ],
+
+  aiLabs: [
+    {
+      id: 'lab-1',
+      title: 'Financial Prompt Engineering Lab',
+      subtitle: 'Commanding LLMs for Investment Research',
+      description: 'Master custom prompting frameworks to extract revenue drivers, margin sensitivities, and balance sheet anomalies from 100+ page corporate SEC filings in seconds.',
+      outcomes: ['Custom prompt library for financial modeling', 'Automated 10-K & 10-Q summary workflows', 'Executive memo generation']
+    },
+    {
+      id: 'lab-2',
+      title: 'AI Forensic Audit & Fraud Lab',
+      subtitle: 'Balance Sheet Red-Flag Intelligence',
+      description: 'Deploy AI anomaly-detection tools to analyze audited financials, spot earnings manipulation, uncover hidden debt, and generate forensic audit briefs.',
+      outcomes: ['Real-time earnings manipulation flags', 'Audit trail verification scripts', 'Corporate fraud risk scoring']
+    },
+    {
+      id: 'lab-3',
+      title: 'AI Valuation & Deal Deck Engine',
+      subtitle: '10x Faster M&A & LBO Workflows',
+      description: 'Integrate custom AI assistants with live Excel models to generate sensitivity tables, scenario summaries, and investment memos at Wall Street speeds.',
+      outcomes: ['Automated LBO return narratives', 'AI-assisted DCF WACC optimization', 'Pitch book text automation']
+    },
+    {
+      id: 'lab-4',
+      title: 'AI Cross-Border Tax & Compliance Lab',
+      subtitle: 'US GAAP & International Tax Automation',
+      description: 'Utilize AI regulatory models to calculate transfer pricing impacts, M&A tax structures, and international compliance requirements effortlessly.',
+      outcomes: ['US GAAP to IFRS automated mapping', 'M&A tax structure scenario modeling', 'Cross-border transfer pricing risk reports']
+    }
+  ],
+
+  productivityTasks: [
+    { task: 'Annual Report Analysis', manualHours: 14, aiMinutes: 25 },
+    { task: 'DCF & Sensitivity Modeling', manualHours: 10, aiMinutes: 30 },
+    { task: 'Forensic Balance Sheet Audit', manualHours: 16, aiMinutes: 40 },
+    { task: 'M&A Pitch Book Drafting', manualHours: 20, aiMinutes: 45 }
+  ]
+};
+

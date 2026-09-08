@@ -9,34 +9,44 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-500/5 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-emerald-300">
-              <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-              Student finance immersion
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-500/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.28em] text-yellow-300 shadow-[0_0_15px_rgba(234,179,8,0.15)]">
+              <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-yellow-400" />
+              STRICTLY LIMITED COHORT • 40 CANDIDATES ONLY
             </div>
 
-            <h2 className="max-w-2xl font-serif text-4xl leading-[1.02] sm:text-5xl xl:text-7xl">
-              <span className="text-slate-100">You Have the </span><span className="text-yellow-400">Degree.</span><br />
-              <span className="text-slate-100">Now Learn to </span><span className="text-emerald-400">Do the Work.</span>
+            <h2 className="max-w-3xl font-serif text-4xl leading-[1.05] sm:text-5xl xl:text-6xl font-bold">
+              <span className="text-slate-100">Your Degree Won't Save </span><br />
+              <span className="text-yellow-400">Your Finance Career.</span><br />
+              <span className="text-emerald-400">Real Deal Execution Will.</span>
             </h2>
 
-            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-              Financial Gurukulam is a 3-month immersive practical finance program designed for students who want to become capable, confident and delivery-ready in investment, valuation, corporate finance and transaction work.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
+              Commerce Gurukulam is an intensive 3-month executive accelerator. Gain live deal execution skills and secure premier placements in Investment Banking, Private Equity, and Venture Capital.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 via-amber-300 to-emerald-400 px-5 py-3 font-medium text-slate-950 shadow-[0_0_30px_rgba(234,179,8,0.2)] transition hover:-translate-y-0.5">
-                Apply for the next cohort <ArrowRight size={18} />
+              <button 
+                onClick={() => {
+                  const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
+                  if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-yellow-400 via-amber-400 to-emerald-400 px-7 py-3.5 text-base font-bold text-slate-950 shadow-[0_0_35px_rgba(234,179,8,0.35)] transition hover:scale-105 hover:shadow-[0_0_45px_rgba(234,179,8,0.5)] cursor-pointer"
+              >
+                Claim Your Cohort Seat <ArrowRight size={20} className="stroke-[2.5]" />
               </button>
-              <button className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 font-medium text-slate-100 transition hover:border-emerald-400/30 hover:text-emerald-200">
-                <Play size={16} /> Watch the student story
-              </button>
+              <a 
+                href="#curriculum" 
+                className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-6 py-3.5 font-medium text-emerald-300 transition hover:bg-emerald-500/20 hover:border-emerald-400/50"
+              >
+                <Play size={16} /> Explore Curriculum
+              </a>
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               {heroStats.map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
-                  <p className="mb-1 text-2xl font-bold text-emerald-300">{stat.value}</p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-slate-400">{stat.label}</p>
+                <div key={stat.label} className="rounded-2xl border border-yellow-400/20 bg-slate-950/80 p-4 shadow-lg hover:border-yellow-400/40 transition">
+                  <p className="mb-1 text-2xl font-black text-yellow-400">{stat.value}</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-300">{stat.label}</p>
                 </div>
               ))}
             </div>

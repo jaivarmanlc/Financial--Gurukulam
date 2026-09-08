@@ -8,7 +8,7 @@ export default function Problem() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <p className="section-kicker">Degree-to-execution problem</p>
-          <h2 className="section-title mx-auto max-w-4xl"><span className="text-slate-100">College gives you the </span><span className="text-yellow-400">degree.</span><span className="text-slate-100"> Financial Gurukulam gives you the </span><span className="text-emerald-400">execution engine.</span></h2>
+          <h2 className="section-title mx-auto max-w-4xl"><span className="text-slate-100">College gives you the </span><span className="text-yellow-400">degree.</span><span className="text-slate-100"> Commerce Gurukulam gives you the </span><span className="text-emerald-400">execution engine.</span></h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
@@ -58,8 +58,14 @@ export default function Problem() {
               ))}
             </div>
 
-            <button className="mt-8 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/5 px-4 py-2 text-sm text-emerald-200">
-              See the student roadmap <ArrowRight size={16} />
+            <button 
+              onClick={() => {
+                const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
+                if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-yellow-400/40 bg-gradient-to-r from-yellow-500/20 to-emerald-500/20 px-5 py-2.5 text-sm font-bold text-yellow-300 hover:scale-105 transition cursor-pointer"
+            >
+              Verify Your Execution Readiness <ArrowRight size={16} />
             </button>
           </motion.div>
         </div>

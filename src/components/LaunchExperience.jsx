@@ -57,7 +57,7 @@ export default function LaunchExperience() {
     <section id="launch" className="terminal-panel py-10 sm:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center">
-          <p className="section-kicker">Cohort 1 launch countdown</p>
+          <p className="section-kicker">HIGH-INTENSITY DEAL IMMERSION</p>
           <h2 className="section-title max-w-4xl mx-auto">
             <span className="text-slate-100">A student finance program designed to feel like a </span><span className="text-yellow-400">live deal room,</span><span className="text-slate-100"> not a </span><span className="text-emerald-400">classroom lecture.</span>
           </h2>
@@ -69,16 +69,16 @@ export default function LaunchExperience() {
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-yellow-400/30 bg-yellow-500/10 text-yellow-300">
                 <Rocket size={20} />
               </div>
-              <span className="rounded-full border border-emerald-400/30 bg-emerald-500/5 px-2 py-1 text-[10px] uppercase tracking-[0.2em] text-emerald-300">
-                Launch window
+              <span className="rounded-full border border-emerald-400/30 bg-emerald-500/5 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-300">
+                STRICT COHORT SELECTION
               </span>
             </div>
 
             <div className="space-y-2">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-slate-400">Career-ready skill stack</p>
-              <h3 className="font-serif text-[2rem] leading-tight text-slate-100">Built for finance careers</h3>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-400">Career-ready skill stack</p>
+              <h3 className="font-serif text-[2rem] leading-tight text-slate-100">Built for Top 1% Finance Careers</h3>
               <p className="text-sm leading-6 text-slate-300">
-                Learn the core skills employers expect from early-career investment and corporate finance talent: valuation, modeling, execution, and decision communication.
+                Master the core deal execution skills that top investment banks and VC firms demand: valuation, modeling, transaction structuring, and boardroom presentation.
               </p>
             </div>
 
@@ -91,12 +91,21 @@ export default function LaunchExperience() {
             </div>
 
             <div className="mt-1 flex flex-wrap justify-center gap-2.5">
-              <button className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950">
-                Apply for Cohort 1 <ArrowRight size={16} />
+              <button 
+                onClick={() => {
+                  const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
+                  if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-emerald-400 px-5 py-3 text-sm font-bold text-slate-950 hover:scale-105 transition cursor-pointer"
+              >
+                Apply For Executive Immersion <ArrowRight size={16} />
               </button>
-              <button className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-slate-200">
-                Explore campus
-              </button>
+              <a 
+                href="#mentors"
+                className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-slate-200 hover:border-emerald-400/30 transition"
+              >
+                Explore Mentors
+              </a>
             </div>
           </div>
 
@@ -131,7 +140,7 @@ export default function LaunchExperience() {
               <BriefcaseBusiness size={18} />
               <span className="text-xs uppercase tracking-[0.2em]">Program fee</span>
             </div>
-            <p className="mt-4 text-3xl font-bold text-slate-100">₹2,50,000</p>
+            <p className="mt-4 text-3xl font-bold text-slate-100">₹90,000</p>
             <p className="mt-2 text-sm text-slate-400">All-inclusive residential execution accelerator</p>
           </div>
 
@@ -140,17 +149,17 @@ export default function LaunchExperience() {
               <Building2 size={18} />
               <span className="text-xs uppercase tracking-[0.2em]">Cohort cap</span>
             </div>
-            <p className="mt-4 text-3xl font-bold text-slate-100">20 students</p>
+            <p className="mt-4 text-3xl font-bold text-slate-100">40 students</p>
             <p className="mt-2 text-sm text-slate-400">High-intensity, mentor-led enterprise training</p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-slate-950/60 p-5">
+          <div className="rounded-2xl border border-emerald-400/20 bg-slate-950/80 p-5 shadow-md">
             <div className="flex items-center gap-3 text-emerald-300">
               <TrendingUp size={18} />
-              <span className="text-xs uppercase tracking-[0.2em]">Gross surplus</span>
+              <span className="text-xs font-bold uppercase tracking-[0.2em]">Placement Support</span>
             </div>
-            <p className="mt-4 text-3xl font-bold text-slate-100">₹35L</p>
-            <p className="mt-2 text-sm text-slate-400">Projected launch revenue with 70% operating margin</p>
+            <p className="mt-4 text-3xl font-black text-emerald-400">100% Dedicated</p>
+            <p className="mt-2 text-sm text-slate-300">Direct executive referral pipeline and hiring partner access</p>
           </div>
         </div>
       </div>

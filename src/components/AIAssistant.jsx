@@ -7,7 +7,7 @@ export default function AIAssistant() {
     {
       id: 1,
       type: 'bot',
-      text: 'Hello! I\'m Chanakya, your AI Advisor. I\'m here to help you learn about The Financial Gurukulam program and answer any questions you may have. What would you like to know?',
+      text: 'Hello! I\'m Chanakya, your AI Advisor. I\'m here to help you learn about The Commerce Gurukulam program and answer any questions you may have. What would you like to know?',
     },
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -21,9 +21,9 @@ export default function AIAssistant() {
   ];
 
   const aiResponses = {
-    tuition: 'Cohort 1 tuition is ₹2,50,000 all-inclusive. This covers 3 months of luxury residential accommodation, gourmet dining, Wall Street software enterprise licenses, tailored executive attire, and direct C-suite mentorship.',
+    tuition: 'Program tuition is ₹90,000 all-inclusive. This covers 3 months of luxury residential accommodation, gourmet dining, Wall Street software enterprise licenses, tailored executive attire, and direct C-suite mentorship.',
     duration: 'The program is a 3-month intensive residential accelerator designed to provide hands-on, real-world financial experience. The daily routine starts at 5 AM with structured learning and execution activities.',
-    eligibility: 'We welcome ambitious individuals from various backgrounds - undergraduate students, graduates, working professionals, and entrepreneurs. The program is limited to 20 elite candidates per cohort.',
+    eligibility: 'We welcome ambitious individuals from various backgrounds - undergraduate students, graduates, working professionals, and entrepreneurs. The program is limited to 40 elite candidates per cohort.',
     career: 'After completing the program, you\'ll have direct access to our mentor network, job placement opportunities, and alumni community for ongoing mentorship and career development.',
   };
 
@@ -55,7 +55,7 @@ export default function AIAssistant() {
       } else if (lowerText.includes('after') || lowerText.includes('placement') || lowerText.includes('job')) {
         response = aiResponses.career;
       } else {
-        response = 'Great question! I\'m here to help. You can ask me about program details, curriculum, mentorship, career outcomes, and more. What else would you like to know about The Financial Gurukulam?';
+        response = 'Great question! I\'m here to help. You can ask me about program details, curriculum, mentorship, career outcomes, and more. What else would you like to know about The Commerce Gurukulam?';
       }
 
       const botMessage = {

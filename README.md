@@ -1,8 +1,8 @@
-# Financial Gurukulam — Student Landing Page
+# Commerce Gurukulam — Student Landing Page
 
 **Empowering the next generation with financial literacy and career guidance.**
 
-A modern, interactive landing page built with React, Vite, and cutting-edge web technologies to showcase the Financial Gurukulam educational platform for students.
+A modern, interactive landing page built with React, Vite, and cutting-edge web technologies to showcase the Commerce Gurukulam educational platform for students.
 
 ---
 
@@ -23,7 +23,7 @@ A modern, interactive landing page built with React, Vite, and cutting-edge web 
 
 ## Overview
 
-**Financial Gurukulam** is an innovative educational platform designed to bridge the gap between theoretical learning and real-world financial literacy. Our landing page serves as the digital gateway for students to explore:
+**Commerce Gurukulam** is an innovative educational platform designed to bridge the gap between theoretical learning and real-world financial literacy. Our landing page serves as the digital gateway for students to explore:
 
 - **Career opportunities** in finance and related fields
 - **Comprehensive curriculum** covering financial concepts

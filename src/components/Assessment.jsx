@@ -4,24 +4,44 @@ import { BarChart3, CheckCircle2, Sparkles } from 'lucide-react';
 
 const questions = [
   {
-    prompt: 'A company has revenue growth, better margins and rising cash flow. Which signal would most strongly support a premium valuation?',
-    options: ['Higher employee count', 'Strong free cash flow conversion', 'More office space', 'Lower interest coverage'],
-    correct: 1
+    prompt: 'Why did you choose Commerce & Finance as your core career path?',
+    options: [
+      'To build a high-impact career in Investment Banking, Valuation, and Corporate Finance',
+      'To get a basic degree and look for routine office jobs',
+      'Because my friends chose it without much thought',
+      'I am still unsure about my long-term career direction'
+    ],
+    correct: 0
   },
   {
-    prompt: 'When analyzing a startup cap table, what matters most before a funding round?',
-    options: ['Color of the brand deck', 'Dilution impact and ownership logic', 'Office location', 'Number of social media followers'],
-    correct: 1
+    prompt: 'Why do you want to study this 3-month practical execution course?',
+    options: [
+      'To build live financial models, master deal structuring, and stand out in placement interviews',
+      'To read more college textbooks and memorize definitions',
+      'Just to collect a generic course participation certificate',
+      'To pass time while waiting for campus drives'
+    ],
+    correct: 0
   },
   {
-    prompt: 'Which financial output best demonstrates execution ability?',
-    options: ['A polished slide with no model', 'A built valuation case with assumptions and rationale', 'A generic business summary', 'A list of competitors'],
-    correct: 1
+    prompt: 'What is your primary objective after completing your graduation?',
+    options: [
+      'Secure a high-tier role in Investment Banking, PE, VC, or Corporate Finance',
+      'Settle for a low-paying back-office entry job',
+      'Wait for internships without having practical modeling skills',
+      'Take a break without a clear career roadmap'
+    ],
+    correct: 0
   },
   {
-    prompt: 'Why do board presentations matter in finance jobs?',
-    options: ['They look good in a PDF', 'They explain decisions with numbers and narrative', 'They replace accounting', 'They remove the need for modeling'],
-    correct: 1
+    prompt: 'How do you believe real financial expertise and confidence are built?',
+    options: [
+      'Through live deal-building, C-suite mentor feedback, and boardroom pitch defenses',
+      'By memorizing accounting formulas the night before college exams',
+      'By watching passive video lectures without opening Excel',
+      'By relying strictly on college textbook chapters'
+    ],
+    correct: 0
   }
 ];
 
@@ -43,11 +63,16 @@ export default function Assessment() {
   const readiness = Math.round((score / questions.length) * 100);
 
   return (
-    <section className="terminal-panel py-20">
+    <section id="assessment-section" className="terminal-panel py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <p className="section-kicker">Finance readiness assessment</p>
-          <h2 className="section-title mx-auto max-w-3xl"><span className="text-slate-100">Check whether you are building the </span><span className="text-yellow-400">decision-making muscle</span><span className="text-slate-100"> employers </span><span className="text-emerald-400">expect.</span></h2>
+          <p className="section-kicker">Student Career Fit & Assessment</p>
+          <h2 className="section-title mx-auto max-w-3xl">
+            <span className="text-slate-100">Why choose </span>
+            <span className="text-yellow-400">Commerce Gurukulam?</span>
+            <span className="text-slate-100"> Evaluate your </span>
+            <span className="text-emerald-400">career mindset.</span>
+          </h2>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -61,7 +86,7 @@ export default function Assessment() {
                 transition={{ duration: 0.4 }}
                 className="rounded-xl border border-white/10 bg-slate-900/70 p-4"
               >
-                <p className="mb-3 text-sm font-medium text-slate-100">Q{index + 1}. {question.prompt}</p>
+                <p className="mb-3 text-sm font-semibold text-slate-100">Q{index + 1}. {question.prompt}</p>
                 <div className="grid gap-2">
                   {question.options.map((option, optionIndex) => {
                     const selected = answers[index] === optionIndex;
@@ -70,9 +95,9 @@ export default function Assessment() {
                         key={option}
                         type="button"
                         onClick={() => handleAnswer(index, optionIndex)}
-                        className={`rounded-lg border px-3 py-2 text-left text-sm transition ${selected
-                          ? 'border-emerald-400/60 bg-emerald-500/10 text-emerald-200'
-                          : 'border-white/10 bg-slate-950/60 text-slate-300 hover:border-yellow-400/40'
+                        className={`rounded-lg border px-3.5 py-2.5 text-left text-sm transition font-medium ${selected
+                          ? 'border-emerald-400/60 bg-emerald-500/15 text-emerald-200 shadow-[0_0_15px_rgba(16,185,129,0.15)]'
+                          : 'border-white/10 bg-slate-950/60 text-slate-300 hover:border-yellow-400/40 hover:text-white'
                           }`}
                       >
                         {option}
@@ -88,9 +113,9 @@ export default function Assessment() {
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-2 text-yellow-300">
                 <BarChart3 size={18} />
-                <span className="text-sm uppercase tracking-[0.2em]">Readiness</span>
+                <span className="text-sm font-bold uppercase tracking-[0.2em]">Program Alignment</span>
               </div>
-              <span className="text-xl font-semibold text-slate-100">{readiness}%</span>
+              <span className="text-xl font-bold text-slate-100">{readiness}%</span>
             </div>
 
             <div className="mb-6 h-3 overflow-hidden rounded-full bg-slate-800/80">
@@ -102,30 +127,30 @@ export default function Assessment() {
 
             <div className="space-y-4">
               <div className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Current score</p>
-                <p className="mt-2 text-3xl font-bold text-emerald-300">{score}/{questions.length}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Career Alignment Score</p>
+                <p className="mt-2 text-3xl font-black text-emerald-300">{score}/{questions.length}</p>
               </div>
 
               <div className="rounded-xl border border-white/10 bg-slate-950/60 p-4">
                 <div className="mb-2 flex items-center gap-2 text-emerald-300">
                   <CheckCircle2 size={16} />
-                  <span className="text-sm uppercase tracking-[0.18em]">Outcome</span>
+                  <span className="text-sm font-bold uppercase tracking-[0.18em]">Fit Evaluation</span>
                 </div>
                 <p className="text-sm leading-6 text-slate-300">
                   {readiness >= 75
-                    ? 'You already think like a finance operator. Gurukulam will sharpen your edge into deal-level execution.'
+                    ? 'You have clear career ambition! Commerce Gurukulam is built for driven students like you who want live deal-room execution and top-tier placements.'
                     : readiness >= 50
-                      ? 'You know the basics. The program will turn your understanding into action and presentation confidence.'
-                      : 'You are at the right starting point. The next step is converting theory into practical models and persuasive decisions.'}
+                      ? 'You know you want a serious finance career. This program will convert your basic degree knowledge into practical deal modeling skills.'
+                      : 'You are evaluating your future options. Commerce Gurukulam will provide the structure, clarity, and skills needed for a high-growth career.'}
                 </p>
               </div>
 
               <div className="rounded-xl border border-yellow-400/20 bg-yellow-500/5 p-4">
                 <div className="mb-2 flex items-center gap-2 text-yellow-200">
                   <Sparkles size={16} />
-                  <span className="text-sm uppercase tracking-[0.18em]">Suggested next move</span>
+                  <span className="text-sm font-bold uppercase tracking-[0.18em]">Next Action</span>
                 </div>
-                <p className="text-sm leading-6 text-slate-300">Start with the valuation and LBO labs. They build the fastest route from campus knowledge to employable finance capability.</p>
+                <p className="text-sm leading-6 text-slate-300">Apply for candidate screening to lock in your seat for the upcoming 3-month residential cohort.</p>
               </div>
             </div>
           </div>
