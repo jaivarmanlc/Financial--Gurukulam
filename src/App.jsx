@@ -44,8 +44,8 @@ function App() {
             onAISurvivalClick={navigateToAISurvival}
           />
           <main>
-            <Hero />
-            <LaunchExperience />
+            <Hero onApplyClick={() => setIsApplicationFormOpen(true)} />
+            <LaunchExperience onApplyClick={() => setIsApplicationFormOpen(true)} />
             <Problem />
             {/* AI Reality Check Teaser Section */}
             <AIRealityCheck onOpenSurvivalGuide={navigateToAISurvival} />
@@ -55,12 +55,12 @@ function App() {
             <FinanceLabs />
             <Mentors />
             <Projects />
-            <Careers />
-            <Assessment />
+            <Careers onApplyClick={() => setIsApplicationFormOpen(true)} />
+            <Assessment onApplyClick={() => setIsApplicationFormOpen(true)} />
             <Experience />
             <FAQ />
           </main>
-          <Footer />
+          <Footer onApplyClick={() => setIsApplicationFormOpen(true)} />
         </>
       ) : (
         /* Dedicated AI Career Survival Sub-Page */

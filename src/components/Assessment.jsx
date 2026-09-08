@@ -41,7 +41,7 @@ const questions = [
   }
 ];
 
-export default function Assessment() {
+export default function Assessment({ onApplyClick }) {
   const [answers, setAnswers] = useState(Array(questions.length).fill(null));
 
   const answeredCount = useMemo(() => {
@@ -166,10 +166,7 @@ export default function Assessment() {
               </div>
               <p className="text-xs text-slate-300 mb-3">Strictly limited to 40 candidates per cohort.</p>
               <button
-                onClick={() => {
-                  const applyBtn = document.querySelector('button[data-apply]') || document.querySelector('nav button');
-                  if (applyBtn) applyBtn.click();
-                }}
+                onClick={onApplyClick}
                 className="w-full py-2.5 bg-gradient-to-r from-yellow-400 to-emerald-400 text-slate-950 font-bold rounded-lg transition text-xs uppercase tracking-wider cursor-pointer hover:scale-[1.02] shadow-[0_0_20px_rgba(234,179,8,0.2)]"
               >
                 Apply for Screening Interview

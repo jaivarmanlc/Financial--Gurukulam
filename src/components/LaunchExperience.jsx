@@ -52,7 +52,7 @@ const careerSkills = [
   'Financial Storytelling',
 ];
 
-export default function LaunchExperience() {
+export default function LaunchExperience({ onApplyClick }) {
   return (
     <section id="launch" className="terminal-panel py-10 sm:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -94,10 +94,10 @@ export default function LaunchExperience() {
 
               <div className="mt-1 flex flex-wrap justify-center gap-2.5">
                 <button 
-                  onClick={() => {
-                    const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
+                  onClick={onApplyClick || (() => {
+                    const formElement = document.getElementById('assessment-section');
                     if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  })}
                   className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-emerald-400 px-5 py-3 text-sm font-bold text-slate-950 hover:scale-105 transition cursor-pointer"
                 >
                   Apply For Executive Immersion <ArrowRight size={16} />

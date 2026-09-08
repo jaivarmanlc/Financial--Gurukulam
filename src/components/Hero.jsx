@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { heroStats } from '../data/content';
 
-export default function Hero() {
+export default function Hero({ onApplyClick }) {
   return (
     <section className="relative overflow-hidden pt-8 pb-16">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(234,179,8,0.08),_transparent_25%),radial-gradient(circle_at_80%_10%,_rgba(16,185,129,0.14),_transparent_24%)]" />
@@ -20,16 +20,16 @@ export default function Hero() {
               <span className="text-emerald-400">Real Deal Execution Will.</span>
             </h2>
 
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
-              Commerce Gurukulam is an intensive 3-month executive accelerator. Gain live deal execution skills and secure premier placements in Investment Banking, Private Equity, and Venture Capital.
+            <p className="mt-6 max-w-2xl text-slate-300 text-base sm:text-lg leading-relaxed">
+              A high-intensity <strong className="text-yellow-300">3-month executive residential accelerator</strong>. Zero textbooks. Zero exam memorization. Build live LBO models, DCF valuations, and M&A pitch decks under practicing C-suite mentors.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <button 
-                onClick={() => {
-                  const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
+                onClick={onApplyClick || (() => {
+                  const formElement = document.getElementById('assessment-section');
                   if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
-                }}
+                })}
                 className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-yellow-400 via-amber-400 to-emerald-400 px-7 py-3.5 text-base font-bold text-slate-950 shadow-[0_0_35px_rgba(234,179,8,0.35)] transition hover:scale-105 hover:shadow-[0_0_45px_rgba(234,179,8,0.5)] cursor-pointer"
               >
                 Claim Your Cohort Seat <ArrowRight size={20} className="stroke-[2.5]" />

@@ -27,7 +27,7 @@ const iconMap = {
   Award
 };
 
-export default function Careers() {
+export default function Careers({ onApplyClick }) {
   return (
     <section id="careers" className="terminal-panel py-20 relative overflow-hidden">
       {/* Background glow effects */}
@@ -129,10 +129,10 @@ export default function Careers() {
             </div>
 
             <button
-              onClick={() => {
-                const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
+              onClick={onApplyClick || (() => {
+                const formElement = document.getElementById('assessment-section');
                 if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
-              }}
+              })}
               className="w-full md:w-auto px-6 py-3.5 bg-gradient-to-r from-yellow-400 to-emerald-400 text-slate-950 font-bold rounded-xl transition transform hover:scale-105 shadow-[0_0_25px_rgba(234,179,8,0.3)] text-xs md:text-sm uppercase tracking-wider cursor-pointer flex items-center justify-center gap-2 shrink-0"
             >
               Evaluate Your Mindset & Apply <ArrowRight size={16} />

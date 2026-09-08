@@ -1,6 +1,6 @@
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ onApplyClick }) {
   return (
     <footer className="border-t border-white/10 bg-[#020b16] py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -12,10 +12,10 @@ export default function Footer() {
             </div>
 
             <button 
-              onClick={() => {
-                const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
+              onClick={onApplyClick || (() => {
+                const formElement = document.getElementById('assessment-section');
                 if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
-              }}
+              })}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-yellow-400 to-emerald-400 px-5 py-3 font-medium text-slate-950 shadow-[0_0_30px_rgba(34,197,94,0.2)] hover:scale-105 transition cursor-pointer"
             >
               Start your application <ArrowRight size={18} />
