@@ -29,7 +29,10 @@ export default function Footer({ onApplyClick }) {
             <p className="mt-2">Commerce & finance execution for serious students.</p>
           </div>
           <div className="flex flex-col gap-2 md:items-end">
-            <div className="flex items-center gap-2"><MapPin size={15} /> Chennai / Remote learning</div>
+            <div className="flex items-start gap-2 max-w-xs text-slate-300">
+              <MapPin size={16} className="shrink-0 mt-0.5 text-yellow-400" />
+              <span>Mettukuppam Rd, Odamanagar, Vanagaram, Chennai, Tamil Nadu 600095</span>
+            </div>
             <a href="https://wa.me/918428881144" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition">
               <Phone size={15} /> +91 84288 81144
             </a>

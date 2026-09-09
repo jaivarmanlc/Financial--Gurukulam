@@ -54,11 +54,11 @@ Seats are strictly capped at **40 candidates per cohort** to ensure a 1:5 mentor
     actions: ['apply', 'whatsapp']
   },
   {
-    keywords: ['location', 'chennai', 'where', 'place', 'bengaluru', 'city', 'address', 'campus'],
-    title: 'Campus Location & Immersion',
-    response: `The residential accelerator campus is located in **Chennai**, with hybrid options for remote immersion.
+    keywords: ['location', 'chennai', 'where', 'place', 'bengaluru', 'city', 'address', 'campus', 'vanagaram', 'mettukuppam'],
+    title: 'Campus Location & Address',
+    response: `The residential accelerator campus is located in **Chennai**:
 
-📍 **Location:** Chennai Executive Immersion Hub
+📍 **Address:** Mettukuppam Rd, Odamanagar, Vanagaram, Chennai, Tamil Nadu 600095
 🏢 **Setup:** State-of-the-art deal room terminal labs, CFO war rooms, and residential suites.`,
     actions: ['apply', 'whatsapp']
   },
@@ -120,7 +120,7 @@ Selection is based on career ambition, commitment to the 5:00 AM discipline, and
 
 📞 **WhatsApp / Phone:** +91 84288 81144
 📧 **Email:** learn@commercegurukulam.com
-📍 **Immersion Hub:** Chennai / Remote Learning
+📍 **Address:** Mettukuppam Rd, Odamanagar, Vanagaram, Chennai, Tamil Nadu 600095
 
 Our admissions team is online to assist with cohort slot reservations and screening interviews.`,
     actions: ['whatsapp', 'apply']
