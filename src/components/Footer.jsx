@@ -25,7 +25,7 @@ export default function Footer({ onApplyClick }) {
 
         <div className="mt-10 flex flex-col gap-8 border-t border-white/10 pt-8 text-sm text-slate-400 md:flex-row md:items-start md:justify-between">
           <div className="max-w-xs">
-            <img src="/logo.jpg" alt="Commerce Gurukulam" className="h-16 md:h-20 w-auto object-contain rounded-lg mb-2" />
+            <img src="/logo.png" alt="Commerce Gurukulam" className="h-16 md:h-20 w-auto object-contain mb-2" />
             <p className="mt-2 text-slate-400">Commerce & finance execution for serious students.</p>
           </div>
 

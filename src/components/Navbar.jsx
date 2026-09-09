@@ -10,9 +10,9 @@ export default function Navbar({ onApplyClick, onHomeClick, onAISurvivalClick })
           className="flex items-center cursor-pointer group"
         >
           <img 
-            src="/logo.jpg" 
+            src="/logo.png" 
             alt="Commerce Gurukulam" 
-            className="h-14 md:h-18 lg:h-20 w-auto object-contain rounded-lg transition group-hover:scale-105" 
+            className="h-12 md:h-16 lg:h-18 w-auto object-contain transition group-hover:scale-105" 
           />
         </div>
 
