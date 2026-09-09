@@ -119,7 +119,7 @@ Selection is based on career ambition, commitment to the 5:00 AM discipline, and
     response: `You can reach our Executive Admissions Board directly:
 
 📞 **WhatsApp / Phone:** +91 84288 81144
-📧 **Email:** commercegurukulam1@gmail.com
+📧 **Email:** learn@commercegurukulam.com
 📍 **Immersion Hub:** Chennai / Remote Learning
 
 Our admissions team is online to assist with cohort slot reservations and screening interviews.`,

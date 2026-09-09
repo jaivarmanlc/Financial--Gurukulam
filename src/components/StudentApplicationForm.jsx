@@ -145,7 +145,7 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
             </table>
 
             <p style="color: #64748b; font-size: 13px; line-height: 1.5; margin-bottom: 24px;">
-              For any urgent questions, feel free to reply directly to this email or reach us at <a href="mailto:commercegurukulam1@gmail.com" style="color: #d97706; font-weight: bold; text-decoration: underline;">commercegurukulam1@gmail.com</a>.
+              For any urgent questions, feel free to reply directly to this email or reach us at <a href="mailto:learn@commercegurukulam.com" style="color: #d97706; font-weight: bold; text-decoration: underline;">learn@commercegurukulam.com</a>.
             </p>
 
             <p style="color: #334155; font-size: 14px; font-weight: bold; margin: 0;">
@@ -163,7 +163,7 @@ export default function StudentApplicationForm({ isOpen, onClose }) {
               © ${new Date().getFullYear()} Commerce Gurukulam • All Rights Reserved
             </p>
             <p style="color: #94a3b8; font-size: 11px; margin: 0;">
-              Official Admissions Office: <a href="mailto:commercegurukulam1@gmail.com" style="color: #64748b; text-decoration: none;">commercegurukulam1@gmail.com</a>
+              Official Admissions Office: <a href="mailto:learn@commercegurukulam.com" style="color: #64748b; text-decoration: none;">learn@commercegurukulam.com</a>
             </p>
           </td>
         </tr>
@@ -185,7 +185,7 @@ Program Privileges & Advantages:
 Next Step — Executive Admissions Interview:
 Our Executive Admissions Team will contact you shortly at ${formData.phone} to conduct your 1-on-1 screening interview and confirm your cohort slot.
 
-For any immediate questions, feel free to reach us at commercegurukulam1@gmail.com.
+For any immediate questions, feel free to reach us at learn@commercegurukulam.com.
 
 Warm regards,
 Admissions Executive Board
@@ -206,8 +206,8 @@ Commerce Gurukulam`;
       content: htmlMessage,
       plain_message: plainTextMsg,
       title: 'Application Acknowledgement & Next Steps',
-      admin_email: 'commercegurukulam1@gmail.com',
-      reply_to: 'commercegurukulam1@gmail.com'
+      admin_email: 'learn@commercegurukulam.com',
+      reply_to: 'learn@commercegurukulam.com'
     };
 
     try {
@@ -444,7 +444,7 @@ Commerce Gurukulam`;
               {/* Option A: Send/Receive Acknowledgement on Student's WhatsApp */}
               <a
                 href={`https://wa.me/${formData.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(
-                  `🏆 *COMMERCE GURUKULAM — APPLICATION ACKNOWLEDGEMENT*\n\nDear ${formData.fullName},\n\nWe have received your candidate profile for the 3-Month Executive Accelerator.\n\n✓ Application Status: Registered & Under Review\n✓ Phone Registered: ${formData.phone}\n\nOur Executive Admissions team will call you shortly to schedule your 1-on-1 screening interview.\n\nOfficial Admissions Contact: +91 84288 81144 | commercegurukulam1@gmail.com`
+                  `🏆 *COMMERCE GURUKULAM — APPLICATION ACKNOWLEDGEMENT*\n\nDear ${formData.fullName},\n\nWe have received your candidate profile for the 3-Month Executive Accelerator.\n\n✓ Application Status: Registered & Under Review\n✓ Phone Registered: ${formData.phone}\n\nOur Executive Admissions team will call you shortly to schedule your 1-on-1 screening interview.\n\nOfficial Admissions Contact: +91 84288 81144 | learn@commercegurukulam.com`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

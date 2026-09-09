@@ -33,9 +33,9 @@ export default function Footer({ onApplyClick }) {
             <a href="https://wa.me/918428881144" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition">
               <Phone size={15} /> +91 84288 81144
             </a>
-            <div className="flex items-center gap-2 text-yellow-300 font-medium">
-              <Mail size={15} /> commercegurukulam1@gmail.com
-            </div>
+            <a href="mailto:learn@commercegurukulam.com" className="flex items-center gap-2 text-yellow-300 font-medium hover:underline">
+              <Mail size={15} /> learn@commercegurukulam.com
+            </a>
           </div>
         </div>
       </div>
