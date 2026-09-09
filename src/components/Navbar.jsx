@@ -12,7 +12,7 @@ export default function Navbar({ onApplyClick, onHomeClick, onAISurvivalClick })
           <img 
             src="/logo.jpg" 
             alt="Commerce Gurukulam" 
-            className="h-10 md:h-12 w-auto object-contain rounded-lg transition group-hover:scale-105" 
+            className="h-14 md:h-18 lg:h-20 w-auto object-contain rounded-lg transition group-hover:scale-105" 
           />
         </div>
 
