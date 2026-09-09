@@ -23,21 +23,32 @@ export default function Footer({ onApplyClick }) {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
-          <div>
+        <div className="mt-10 flex flex-col gap-8 border-t border-white/10 pt-8 text-sm text-slate-400 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-xs">
             <p className="font-serif text-2xl text-slate-100">Commerce Gurukulam</p>
-            <p className="mt-2">Commerce & finance execution for serious students.</p>
+            <p className="mt-2 text-slate-400">Commerce & finance execution for serious students.</p>
           </div>
-          <div className="flex flex-col gap-2 md:items-end">
-            <div className="flex items-start gap-2 max-w-xs text-slate-300">
-              <MapPin size={16} className="shrink-0 mt-0.5 text-yellow-400" />
-              <span>Mettukuppam Rd, Odamanagar, Vanagaram, Chennai, Tamil Nadu 600095</span>
+
+          <div className="flex flex-col gap-3 text-left">
+            <div className="flex items-start gap-3 max-w-sm text-slate-300">
+              <MapPin size={18} className="shrink-0 mt-0.5 text-yellow-400" />
+              <span className="leading-snug">Mettukuppam Rd, Odamanagar, Vanagaram, Chennai, Tamil Nadu 600095</span>
             </div>
-            <a href="https://wa.me/918428881144" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition">
-              <Phone size={15} /> +91 84288 81144
+            <a 
+              href="https://wa.me/918428881144" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-3 text-slate-300 hover:text-emerald-400 transition"
+            >
+              <Phone size={18} className="shrink-0 text-yellow-400" /> 
+              <span>+91 84288 81144</span>
             </a>
-            <a href="mailto:learn@commercegurukulam.com" className="flex items-center gap-2 text-yellow-300 font-medium hover:underline">
-              <Mail size={15} /> learn@commercegurukulam.com
+            <a 
+              href="mailto:learn@commercegurukulam.com" 
+              className="flex items-center gap-3 text-yellow-300 font-medium hover:underline"
+            >
+              <Mail size={18} className="shrink-0 text-yellow-400" /> 
+              <span>learn@commercegurukulam.com</span>
             </a>
           </div>
         </div>
