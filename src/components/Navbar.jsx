@@ -7,15 +7,13 @@ export default function Navbar({ onApplyClick, onHomeClick, onAISurvivalClick })
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div 
           onClick={onHomeClick}
-          className="flex items-center gap-3 cursor-pointer"
+          className="flex items-center cursor-pointer group"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-yellow-400/40 bg-gradient-to-br from-yellow-400/20 to-emerald-400/20 text-sm font-bold text-yellow-300 shadow-[0_0_20px_rgba(234,179,8,0.15)]">
-            CG
-          </div>
-          <div>
-            <p className="text-[10px] uppercase tracking-[0.28em] text-slate-400">Commerce</p>
-            <h1 className="font-serif text-xl tracking-wide text-slate-100">Gurukulam</h1>
-          </div>
+          <img 
+            src="/logo.jpg" 
+            alt="Commerce Gurukulam" 
+            className="h-10 md:h-12 w-auto object-contain rounded-lg transition group-hover:scale-105" 
+          />
         </div>
 
         <div className="hidden items-center gap-7 md:flex">
