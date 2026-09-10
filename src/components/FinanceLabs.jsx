@@ -95,12 +95,20 @@ export default function FinanceLabs() {
   };
 
   const evaluateSpokenPitch = (spokenText, targetScript, durationSeconds) => {
-    let cleanSpoken = (spokenText || '').trim().toLowerCase();
+    const cleanSpoken = (spokenText || '').trim().toLowerCase();
     const cleanTarget = targetScript.text.toLowerCase();
 
-    // Fallback to target text if mic input was silent
-    if (!cleanSpoken || cleanSpoken.length < 8) {
-      cleanSpoken = cleanTarget;
+    // If user didn't speak or mic captured nothing
+    if (!cleanSpoken || cleanSpoken.length < 3) {
+      return {
+        score: '0/100',
+        grade: 'No Speech Recognized',
+        accuracyPct: '0%',
+        wpm: '0 WPM',
+        termsMatched: `0/${targetScript.keyTerms.length} Terms`,
+        feedback: 'No voice recognized. Please speak the presentation script aloud into your microphone.',
+        noSpeech: true
+      };
     }
 
     // Key terms matching
@@ -114,9 +122,8 @@ export default function FinanceLabs() {
     const spokenWords = cleanSpoken.split(/\s+/).filter(Boolean);
     const targetWords = cleanTarget.split(/\s+/).filter(Boolean);
     
-    const duration = Math.max(3, durationSeconds || 5);
+    const duration = Math.max(2, durationSeconds || 4);
     const calculatedWpm = Math.round((spokenWords.length / duration) * 60);
-    const wpmDisplay = Math.min(175, Math.max(115, calculatedWpm));
 
     let matchCount = 0;
     spokenWords.forEach((word) => {
@@ -124,18 +131,21 @@ export default function FinanceLabs() {
     });
 
     const accuracyRatio = matchCount / Math.max(1, targetWords.length);
-    const accuracyPct = Math.min(100, Math.round(Math.max(84, accuracyRatio * 100)));
+    const accuracyPct = Math.min(100, Math.round(accuracyRatio * 100));
     const termRatio = matchedTerms / Math.max(1, targetScript.keyTerms.length);
 
-    const finalScore = Math.min(98, Math.max(86, Math.round((accuracyRatio * 50) + (termRatio * 40) + 12)));
+    const finalScore = Math.min(100, Math.round((accuracyRatio * 50) + (termRatio * 50)));
 
     return {
       score: `${finalScore}/100`,
-      grade: 'Executive Board Grade',
+      grade: finalScore >= 80 ? 'Executive Board Grade' : finalScore >= 50 ? 'Moderate Pitch' : 'Needs Practice',
       accuracyPct: `${accuracyPct}%`,
-      wpm: `${wpmDisplay} WPM (Optimal)`,
+      wpm: `${calculatedWpm} WPM`,
       termsMatched: `${matchedTerms}/${targetScript.keyTerms.length} Terms`,
-      feedback: `Outstanding pitch! Clear articulation, 100% key term coverage, and executive cadence.`
+      feedback: finalScore >= 80 
+        ? 'Excellent articulation! Clear pace and key term coverage.' 
+        : `Voice pitch captured. Matched ${matchedTerms}/${targetScript.keyTerms.length} key terms.`,
+      noSpeech: false
     };
   };
 
@@ -210,11 +220,16 @@ export default function FinanceLabs() {
           setIsRecording(false);
           if (timerRef.current) clearInterval(timerRef.current);
 
-          const duration = Math.max(3, (Date.now() - (startTimeRef.current || Date.now())) / 1000);
+          const duration = Math.max(2, (Date.now() - (startTimeRef.current || Date.now())) / 1000);
           setRehearsals((r) => r + 1);
 
-          const spokenText = transcriptRef.current.trim() || scripts[activeScriptIdx].text;
-          setLiveTranscript(spokenText);
+          const spokenText = transcriptRef.current.trim();
+          if (!spokenText) {
+            setLiveTranscript('⚠️ No speech or voice recognized.');
+          } else {
+            setLiveTranscript(spokenText);
+          }
+
           const evaluated = evaluateSpokenPitch(spokenText, scripts[activeScriptIdx], duration);
           setPitchScore(evaluated);
         };
@@ -222,8 +237,31 @@ export default function FinanceLabs() {
         recognition.start();
       } catch (err) {
         console.error('Speech init error:', err);
+        fallbackSimulatedPractice();
       }
+    } else {
+      fallbackSimulatedPractice();
     }
+  };
+
+  const fallbackSimulatedPractice = () => {
+    setIsRecording(true);
+    let count = 0;
+    timerRef.current = setInterval(() => {
+      count += 1;
+      setRecordingTime(count);
+      if (count >= 5) {
+        clearInterval(timerRef.current);
+        setIsRecording(false);
+        setRehearsals((r) => r + 1);
+        const spokenText = transcriptRef.current.trim();
+        if (!spokenText) {
+          setLiveTranscript('⚠️ No speech or voice recognized.');
+        }
+        const evaluated = evaluateSpokenPitch(spokenText, scripts[activeScriptIdx], 5);
+        setPitchScore(evaluated);
+      }
+    }, 1000);
   };
 
   const lbo = useMemo(() => {
@@ -494,15 +532,31 @@ export default function FinanceLabs() {
 
               {/* Real AI Speech Evaluation Scorecard */}
               {pitchScore && (
-                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="mt-4 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-3.5">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }} 
+                  animate={{ opacity: 1, scale: 1 }} 
+                  className={`mt-4 rounded-2xl border p-3.5 ${
+                    pitchScore.noSpeech 
+                      ? 'border-amber-500/40 bg-amber-500/10' 
+                      : 'border-emerald-400/30 bg-emerald-500/10'
+                  }`}
+                >
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <div className="flex items-center gap-2 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                      <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-wider ${
+                        pitchScore.noSpeech ? 'text-amber-300' : 'text-emerald-300'
+                      }`}>
                         <Sparkles size={14} /> AI Speech Evaluation
                       </div>
-                      <p className="text-[11px] text-emerald-200/80 mt-0.5">{pitchScore.feedback}</p>
+                      <p className={`text-[11px] mt-0.5 ${
+                        pitchScore.noSpeech ? 'text-amber-200/90 font-medium' : 'text-emerald-200/80'
+                      }`}>{pitchScore.feedback}</p>
                     </div>
-                    <span className="rounded-full bg-emerald-400/20 px-3 py-1 text-xs font-bold text-emerald-300 border border-emerald-400/30 shrink-0">
+                    <span className={`rounded-full px-3 py-1 text-xs font-bold border shrink-0 ${
+                      pitchScore.noSpeech 
+                        ? 'bg-amber-500/20 text-amber-300 border-amber-500/40' 
+                        : 'bg-emerald-400/20 text-emerald-300 border-emerald-400/30'
+                    }`}>
                       {pitchScore.score}
                     </span>
                   </div>
@@ -510,15 +564,15 @@ export default function FinanceLabs() {
                   <div className="grid grid-cols-3 gap-2 text-center text-[11px] mt-2">
                     <div className="rounded-lg bg-slate-900/80 p-2 border border-white/5">
                       <p className="text-slate-400 text-[10px]">Accuracy</p>
-                      <p className="font-bold text-emerald-300 mt-0.5">{pitchScore.accuracyPct}</p>
+                      <p className={`font-bold mt-0.5 ${pitchScore.noSpeech ? 'text-amber-300' : 'text-emerald-300'}`}>{pitchScore.accuracyPct}</p>
                     </div>
                     <div className="rounded-lg bg-slate-900/80 p-2 border border-white/5">
                       <p className="text-slate-400 text-[10px]">Pacing</p>
-                      <p className="font-bold text-yellow-300 mt-0.5">{pitchScore.wpm}</p>
+                      <p className={`font-bold mt-0.5 ${pitchScore.noSpeech ? 'text-amber-300' : 'text-yellow-300'}`}>{pitchScore.wpm}</p>
                     </div>
                     <div className="rounded-lg bg-slate-900/80 p-2 border border-white/5">
                       <p className="text-slate-400 text-[10px]">Key Terms</p>
-                      <p className="font-bold text-cyan-300 mt-0.5">{pitchScore.termsMatched}</p>
+                      <p className={`font-bold mt-0.5 ${pitchScore.noSpeech ? 'text-amber-300' : 'text-cyan-300'}`}>{pitchScore.termsMatched}</p>
                     </div>
                   </div>
                 </motion.div>
