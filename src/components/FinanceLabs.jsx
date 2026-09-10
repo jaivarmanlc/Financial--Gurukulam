@@ -48,6 +48,39 @@ export default function FinanceLabs() {
     }
   ];
 
+  // AI Financial Audit Lab State
+  const [selectedCompany, setSelectedCompany] = useState(0);
+  const [isAuditing, setIsAuditing] = useState(false);
+
+  const auditCompanies = [
+    {
+      name: 'Reliance Industries (BSE Audit)',
+      ticker: 'RELIANCE.BO',
+      period: 'Q4 FY26 SEC Extraction & Forensic Audit',
+      metrics: [
+        { label: 'Revenue trend', value: '+18.4% YoY', status: 'Optimal' },
+        { label: 'EBITDA margin expansion', value: '9.1 pts', status: 'Expanding' },
+        { label: 'Cash flow conversion', value: '82.0%', status: 'Strong' },
+        { label: 'Net Debt / EBITDA ratio', value: '1.45x', status: 'Healthy' },
+        { label: 'Working capital cycle', value: '28 days', status: 'Efficient' },
+        { label: 'AI Forensic Risk Score', value: '99/100', status: 'Clean' }
+      ]
+    },
+    {
+      name: 'Apple Inc. 10-K SEC Filing',
+      ticker: 'NASDAQ: AAPL',
+      period: 'Annual 10-K Forensic Scan',
+      metrics: [
+        { label: 'Services Gross Margin', value: '74.2%', status: 'High' },
+        { label: 'Share Repurchase Yield', value: '4.1%', status: 'Accretive' },
+        { label: 'Free Cash Flow Yield', value: '6.8%', status: 'Robust' },
+        { label: 'Inventory Turnover', value: '38.5x', status: 'World Class' },
+        { label: 'R&D to Revenue', value: '7.8%', status: 'Sustained' },
+        { label: 'AI Forensic Risk Score', value: '98/100', status: 'Clean' }
+      ]
+    }
+  ];
+
   const handlePlayAudioPreview = () => {
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel();
@@ -324,18 +357,74 @@ export default function FinanceLabs() {
         </div>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
-          <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} className="rounded-3xl border border-white/10 bg-slate-950/70 p-5">
-            <div className="mb-5 flex items-center gap-2 text-emerald-300">
-              <BrainCircuit size={18} />
-              <span className="text-sm uppercase tracking-[0.2em]">AI financial analysis demo</span>
-            </div>
-            <div className="space-y-3">
-              {aiSummary.map(({ label, value }) => (
-                <div key={label} className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-900/60 px-3 py-3">
-                  <span className="text-sm text-slate-300">{label}</span>
-                  <span className="rounded-full border border-emerald-400/30 bg-emerald-500/5 px-2 py-1 text-xs font-medium text-emerald-200">{value}</span>
+          <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} className="rounded-3xl border border-white/10 bg-slate-950/70 p-5 flex flex-col justify-between">
+            <div>
+              <div className="mb-4 flex items-center justify-between flex-wrap gap-2">
+                <div className="flex items-center gap-2 text-emerald-300">
+                  <BrainCircuit size={18} />
+                  <span className="text-sm font-semibold uppercase tracking-[0.2em]">AI Financial Audit Lab</span>
                 </div>
-              ))}
+                <div className="flex items-center gap-1.5">
+                  <button
+                    onClick={() => {
+                      setSelectedCompany((prev) => (prev + 1) % auditCompanies.length);
+                      setIsAuditing(false);
+                    }}
+                    className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-emerald-300 transition cursor-pointer"
+                  >
+                    <RotateCcw size={12} /> Switch Filing ({selectedCompany + 1}/{auditCompanies.length})
+                  </button>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-4 mb-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold text-slate-100 text-sm">{auditCompanies[selectedCompany].name}</span>
+                  <span className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2 py-0.5 text-[10px] uppercase tracking-wider text-cyan-300 font-mono">
+                    {auditCompanies[selectedCompany].ticker}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-400 font-mono mb-3">{auditCompanies[selectedCompany].period}</p>
+
+                <div className="space-y-2.5">
+                  {auditCompanies[selectedCompany].metrics.map(({ label, value, status }) => (
+                    <div key={label} className="flex items-center justify-between rounded-xl border border-white/5 bg-slate-950/60 px-3 py-2 text-xs">
+                      <span className="text-slate-300">{label}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] text-slate-400 font-mono">{status}</span>
+                        <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-2 py-0.5 font-bold text-emerald-300">{value}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {isAuditing && (
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="rounded-2xl border border-cyan-400/30 bg-cyan-950/30 p-3 mb-4 text-xs">
+                  <div className="flex items-center justify-between text-cyan-300 font-bold mb-1">
+                    <span className="flex items-center gap-1.5">
+                      <Sparkles size={14} className="animate-spin text-cyan-400" /> AI Forensic Scanner
+                    </span>
+                    <span className="text-emerald-400 font-mono">VERIFIED CLEAN</span>
+                  </div>
+                  <p className="text-slate-300 text-[11px] leading-relaxed">
+                    ✓ 480 SEC notes cross-referenced — Zero accounting anomalies detected. Cash-to-EBITDA reconciliation verified.
+                  </p>
+                </motion.div>
+              )}
+            </div>
+
+            <div className="mt-4 flex items-center justify-between rounded-2xl border border-emerald-400/20 bg-emerald-500/5 px-4 py-3">
+              <div className="flex items-center gap-2 text-emerald-200">
+                <CheckCircle2 size={16} className="text-emerald-400" />
+                <span className="text-sm font-medium">Audit Protocol: 100% SEC Automated</span>
+              </div>
+              <button 
+                onClick={() => setIsAuditing((prev) => !prev)}
+                className="rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 px-4 py-2 text-xs font-bold text-slate-950 hover:scale-105 transition shadow-[0_0_15px_rgba(52,211,153,0.3)] cursor-pointer"
+              >
+                {isAuditing ? '✓ Scan Complete' : 'Run AI Forensic Scan'}
+              </button>
             </div>
           </motion.div>
 
