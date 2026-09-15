@@ -1,74 +1,74 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, BrainCircuit, ChartNoAxesCombined, GraduationCap } from 'lucide-react';
-import { problemPoints } from '../data/content';
+import { ArrowRight, AlertTriangle, TrendingUp, Zap, ShieldCheck } from 'lucide-react';
+import { mindTriggers } from '../data/content';
 
-export default function Problem() {
+export default function Problem({ onApplyClick }) {
   return (
-    <section id="program" className="terminal-panel py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <p className="section-kicker">Degree-to-execution problem</p>
-          <h2 className="section-title mx-auto max-w-4xl"><span className="text-slate-100">College gives you the </span><span className="text-yellow-400">degree.</span><span className="text-slate-100"> Commerce Gurukulam gives you the </span><span className="text-emerald-400">execution engine.</span></h2>
+    <section className="relative py-20 bg-[#020714] overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Title */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/40 bg-red-500/10 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-red-400">
+            <AlertTriangle size={14} /> THE HARD TRUTH ABOUT COLLEGE DEGREES
+          </span>
+
+          <h2 className="mt-4 font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+            Why 90% Of Commerce Students <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-amber-400">
+              Get Trapped In Low-Paid Roles
+            </span>
+          </h2>
+
+          <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+            The corporate world doesn't care how many pages of textbook answers you memorized. They care if you can file GST on day one and build live Excel models.
+          </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="grid gap-5">
-            {problemPoints.map(({ title, description }, index) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, x: -18 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="flex gap-4 rounded-2xl border border-white/10 bg-slate-950/70 p-5 hover:border-yellow-400/40 hover:bg-slate-950/90"
-              >
-                <div className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/10 text-emerald-300">
-                  {index === 0 ? <GraduationCap size={20} /> : index === 1 ? <ChartNoAxesCombined size={20} /> : <BrainCircuit size={20} />}
-                </div>
-                <div>
-                  <h3 className="mb-2 text-xl font-semibold text-slate-100">{title}</h3>
-                  <p className="leading-7 text-slate-300">{description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} className="rounded-3xl border border-yellow-400/20 bg-gradient-to-br from-yellow-500/10 via-slate-950 to-emerald-500/10 p-6 shadow-[0_0_40px_rgba(234,179,8,0.06)]">
-            <div className="flex items-center justify-between">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-slate-400">Reality check</p>
-              <div className="rounded-full border border-yellow-400/20 bg-yellow-500/5 px-2 py-1 text-xs text-yellow-300">Student focus</div>
-            </div>
-            <h3 className="mt-5 font-serif text-3xl text-slate-100">A job-ready finance student is built through repetition, review and pressure-tested thinking.</h3>
-
-            <div className="mt-6 space-y-4">
-              {[
-                ['Valuation confidence', '86%'],
-                ['Modeling consistency', '91%'],
-                ['Boardroom clarity', '89%']
-              ].map(([label, value]) => (
-                <div key={label}>
-                  <div className="mb-2 flex items-center justify-between text-sm text-slate-300">
-                    <span>{label}</span>
-                    <span>{value}</span>
-                  </div>
-                  <div className="h-2 overflow-hidden rounded-full bg-slate-800">
-                    <div className="h-full rounded-full bg-gradient-to-r from-yellow-400 via-emerald-400 to-emerald-500" style={{ width: value }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <button 
-              onClick={() => {
-                const formElement = document.getElementById('assessment-section') || document.querySelector('button[data-apply]');
-                if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-yellow-400/40 bg-gradient-to-r from-yellow-500/20 to-emerald-500/20 px-5 py-2.5 text-sm font-bold text-yellow-300 hover:scale-105 transition cursor-pointer"
+        {/* 3 Mind Trigger Cards */}
+        <div className="grid gap-8 md:grid-cols-3">
+          {mindTriggers.map((trigger, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className="rounded-3xl border border-slate-800 bg-[#051124] p-6 sm:p-8 flex flex-col justify-between hover:border-amber-400/50 transition duration-300 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)]"
             >
-              Verify Your Execution Readiness <ArrowRight size={16} />
-            </button>
-          </motion.div>
+              <div>
+                <div className="h-12 w-12 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 mb-6">
+                  {idx === 0 ? <AlertTriangle size={24} className="text-red-400" /> : idx === 1 ? <TrendingUp size={24} className="text-amber-400" /> : <Zap size={24} className="text-emerald-400" />}
+                </div>
+
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-amber-400">{trigger.title}</span>
+                <h3 className="text-xl font-bold font-serif text-white mt-1 mb-3">
+                  {trigger.headline}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
+                  {trigger.description}
+                </p>
+              </div>
+
+              <div className="mt-6 rounded-xl bg-slate-900/80 p-3.5 border border-slate-800">
+                <p className="text-[11px] font-bold text-amber-300">
+                  ⚠️ {trigger.highlight}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Banner CTA */}
+        <div className="mt-12 text-center">
+          <button
+            onClick={onApplyClick}
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-400 via-emerald-400 to-emerald-500 px-8 py-4 text-xs font-extrabold uppercase text-slate-950 hover:scale-105 transition cursor-pointer shadow-lg shadow-emerald-500/20"
+          >
+            Break Out Of The College Trap <ArrowRight size={16} />
+          </button>
+        </div>
+
       </div>
     </section>
   );
